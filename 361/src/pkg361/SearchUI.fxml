@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9" fx:controller="pkg361.SearchUIC">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0084ff" height="89.0" stroke="BLACK" strokeType="INSIDE" width="603.0" />
+      <Label layoutX="14.0" layoutY="30.0" text="PSU Textbook Price Match">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="titleLabel" layoutX="35.0" layoutY="105.0" prefHeight="18.0" prefWidth="222.0" text="Book Title" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="isbnLabel" layoutX="35.0" layoutY="123.0" prefHeight="18.0" prefWidth="222.0" text="ISBN: " visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="bookImage" fitHeight="206.0" fitWidth="160.0" layoutX="35.0" layoutY="141.0" pickOnBounds="true" visible="false">
+         <image>
+            <Image url="@../../../../Desktop/Misc/Christmas/Is%20critmiss.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="authorLabel" layoutX="35.0" layoutY="347.0" prefHeight="18.0" prefWidth="222.0" text="Author(s): " visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="editionLabel" layoutX="35.0" layoutY="365.0" prefHeight="18.0" prefWidth="87.0" text="Edition: " visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="325.0" layoutY="29.0" promptText="Enter title or ISBN">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Button fx:id="submitButton" layoutX="507.0" layoutY="29.0" mnemonicParsing="false" onAction="#handleSubmitButton" text="Go" />
+   </children>
+</AnchorPane>
