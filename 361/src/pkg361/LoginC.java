@@ -12,11 +12,14 @@ public class LoginC
     private LoginUIC theLoginUIC;
     private UserList listOfUsers;
     private String currentUser;
+    //private PersistentDataCollection thePDCol;
     
     public LoginC(Stage stage)
     {
+        listOfUsers = new UserList();
+        listOfUsers.populateListOfUsers();
         this.stage = stage;
-        setLoginScene(stage);
+        setLoginScene(this.stage);
     }
     
     public void setLoginScene(Stage stage)
@@ -37,14 +40,16 @@ public class LoginC
         }
     }
     
-    //verify throwing an issue
-    public boolean authenticate(String username, String password){
+    public boolean authenticate(String un, String pw)
+    {
+        System.out.print("Passed to LoginC.  ");
+        System.out.println("Creds to verify: " + un + ", " + pw);
         
-        if(listOfUsers.verifyLogin(username, password)){
-            setCurrentUser(username);
-            //NavCntl theNavCntl = NavCntl.getNavCntl(this.stage);
-            //theNavCntl.setTheCurrentUser(theCurrentUser); 
+        if(listOfUsers.verifyLogin(un, pw))
+        {
+            setCurrentUser(un);
             System.out.println("User authenticated successfully");
+            System.out.println("Current user: " + currentUser);
             return true;
         }             
         

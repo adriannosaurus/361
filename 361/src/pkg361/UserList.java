@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class UserList implements Serializable
 {
-    private ArrayList<User> listOfUsers;
+    private ArrayList<User> listOfUsers = new ArrayList();
     
     public UserList()
     {
@@ -16,16 +16,17 @@ public class UserList implements Serializable
     {
         listOfUsers.add(new User("adrianne", "kubiak"));
         listOfUsers.add(new User("test", "user"));
+        System.out.println("listOfUsers populated: " + listOfUsers.size() + " users");
         return listOfUsers;
     }
     
-    public boolean verifyLogin(String username, String password)
+    public boolean verifyLogin(String userIn, String passIn)
     {
         for (User x: listOfUsers)
         {
-            System.out.println(x.getUsername());
-            if (x.isEqual(username, password))
+            if (x.isEqual(userIn, passIn))
             {
+                System.out.println("Verified: true");
                 return true;
             }
         }
@@ -57,5 +58,10 @@ public class UserList implements Serializable
             }
         }
         return null;
+    }
+    
+    public boolean testMethod()
+    {
+        return true;
     }
 }

@@ -23,12 +23,18 @@ public class SearchUIC implements Initializable
     
     private SearchC theSearchC;
     
+    @Override
+    public void initialize(URL url, ResourceBundle rb)
+    {
+    }
+    
     @FXML public void handleSubmitButton (ActionEvent ae) throws Exception
     {
         //String input = userInput.getText();// ¯\_(ツ)_/¯ NullPointer¿
-        
+       
         //Enter search term here for now
-        String input = "Phantom of the Opera";
+        String input = "029375";
+        
         Book bookToDisplay;
         int searchType = theSearchC.searchBooks(input);
         if (searchType == 1)
@@ -64,13 +70,8 @@ public class SearchUIC implements Initializable
     
     @FXML public void handleLoginButton (ActionEvent ae) throws Exception
     {
-        System.out.println("login clicked");
+        System.out.println("Login button clicked");
         theSearchC.goToLogin();
-    }
-    
-    @Override
-    public void initialize(URL url, ResourceBundle rb)
-    {
     }
     
     public void setSearchC(SearchC aSearchC)

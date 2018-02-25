@@ -22,25 +22,17 @@ public class LoginUIC implements Initializable
         theLoginC.goToSearch();
     }
     
-    @FXML
-    private void handleSubmitButton(ActionEvent event) throws Exception {
+    @FXML private void handleSubmitButton(ActionEvent event) throws Exception {
         
-        System.out.println("submit pressed");
+        System.out.print("Submit pressed. ");
         
         String username = usernameField.getText();
         String password = passwordField.getText();
-         
-        //auth throwing an issue
-        if (!theLoginC.authenticate(username, password))
-        {
-            usernameField.clear();
-            passwordField.clear();
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Nope");
-            alert.setHeaderText("That wasn't quite right");
-            alert.setContentText("Please try again");
-            alert.showAndWait();
-        }
+        
+        System.out.println("Auth: " + username + ", " + password);
+        
+        //doesn't like authenticate()
+        boolean authenticated = theLoginC.authenticate(username, password);
     }
     
     public void setLoginC(LoginC aLoginC)

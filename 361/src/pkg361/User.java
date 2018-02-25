@@ -8,6 +8,11 @@ public class User implements Serializable
     private String password;
     //private Profile profile;
     
+    public User()
+    {
+        this.username = "username";
+        this.password = "password";
+    }
     public User(String username, String password)
     {
         this.username = username;
