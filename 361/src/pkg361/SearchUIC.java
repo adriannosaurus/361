@@ -18,19 +18,10 @@ public class SearchUIC implements Initializable
     @FXML private ImageView bookImage;
     @FXML private TextField userInput;
     @FXML private Button submitButton;
+    @FXML private Button loginButton;
     @FXML private TableView resultsTable;
     
     private SearchC theSearchC;
-    
-    @Override
-    public void initialize(URL url, ResourceBundle rb)
-    {
-    }
-
-    public void setSearchC(SearchC aSearchC)
-    {
-        this.theSearchC = aSearchC;
-    }
     
     @FXML public void handleSubmitButton (ActionEvent ae) throws Exception
     {
@@ -69,6 +60,22 @@ public class SearchUIC implements Initializable
             bookImage.setVisible(true);
             //resultsTable.setVisible(true);// ¯\_(ツ)_/¯ NullPointer¿
         }   
+    }
+    
+    @FXML public void handleLoginButton (ActionEvent ae) throws Exception
+    {
+        System.out.println("login clicked");
+        theSearchC.goToLogin();
+    }
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb)
+    {
+    }
+    
+    public void setSearchC(SearchC aSearchC)
+    {
+        this.theSearchC = aSearchC;
     }
 
     public Label getTitleLabel()

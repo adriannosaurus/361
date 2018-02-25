@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg361.LoginUIC">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0084ff" height="89.0" stroke="BLACK" strokeType="INSIDE" width="603.0" />
+      <Label layoutX="33.0" layoutY="16.0" prefHeight="29.0" prefWidth="169.0" text="PSU Textbook">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="43.0" prefHeight="29.0" prefWidth="169.0" text="Price Match">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="backButton" layoutX="517.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleBackButton" text="Go back" />
+      <TextField fx:id="usernameField" layoutX="218.0" layoutY="187.0" promptText="Username" />
+      <PasswordField fx:id="passwordField" layoutX="218.0" layoutY="236.0" promptText="Password" />
+      <Button fx:id="submitButton" layoutX="272.0" layoutY="290.0" mnemonicParsing="false" onAction="#handleSubmitButton" text="Submit" />
+   </children>
+</AnchorPane>

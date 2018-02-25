@@ -15,7 +15,6 @@ public class Main extends Application
     }
     
     public void start(Stage stage) throws Exception {
-        
         SearchC theSearchC = new SearchC(stage);
     }
 

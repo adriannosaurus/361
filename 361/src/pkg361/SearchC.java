@@ -11,8 +11,8 @@ import javafx.stage.Stage;
 public class SearchC
 {
     private Stage stage;
-    BookList bookListClass;
     private SearchUIC theSearchUIC;
+    BookList bookListClass;
     ArrayList<Book> localListOfBooks;
     
     public SearchC(Stage stage)
@@ -83,6 +83,11 @@ public class SearchC
         System.out.println("Term to search: " + searchTerm);
         
         return searchTerm;
+    }
+    
+    public void goToLogin()
+    {
+        LoginC theLoginC = new LoginC(this.stage);
     }
 
 }
