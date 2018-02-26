@@ -61,7 +61,7 @@ public class SearchC
     }
     
     public String searchByIsbn(String in)
-    {
+    {      
         String searchIsbn = "";
         Book bookToReturn = new Book();
         System.out.println("Original string: " + in);        
@@ -78,10 +78,11 @@ public class SearchC
     }
     
     public Book searchByTitle(String in)
-    {
+    {        
         String searchTerm = in; //input
         System.out.println("SearchC search term: " + in);
-        return new Book();
+        localListOfBooks = bookListClass.getBookDummyData();
+        return localListOfBooks.get(1);
     }
     
     public void goToLogin()

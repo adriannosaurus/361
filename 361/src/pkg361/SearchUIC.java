@@ -24,6 +24,7 @@ public class SearchUIC implements Initializable
     private SearchC theSearchC;
     private BookList theBookList;
     private LoginC theLoginC;
+    private Book bookToDisplay;
     
     @Override
     public void initialize(URL url, ResourceBundle rb)
@@ -35,14 +36,14 @@ public class SearchUIC implements Initializable
         //String input = userInput.getText();// ¯\_(ツ)_/¯ NullPointer¿
        
         //Enter search term here for now
-        String input = "Dothraki";
+        String input = "103-480-2-335";
         
-        Book bookToDisplay;
         int searchType = theSearchC.getSearchType(input);
         if (searchType == 1)
         {
             System.out.println("Search by ISBN");
             
+            //Fixing search by string before search by ISBN
             //bookToDisplay = theSearchC.searchByIsbn(input);
             
             isbnLabel.setText("ISBN: " + theSearchC.searchByIsbn(input));
