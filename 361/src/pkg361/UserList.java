@@ -16,7 +16,6 @@ public class UserList implements Serializable
     {
         listOfUsers.add(new User("adrianne", "kubiak"));
         listOfUsers.add(new User("test", "user"));
-        System.out.println("listOfUsers populated: " + listOfUsers.size() + " users");
         return listOfUsers;
     }
     
@@ -26,7 +25,6 @@ public class UserList implements Serializable
         {
             if (x.isEqual(userIn, passIn))
             {
-                System.out.println("Verified: true");
                 return true;
             }
         }

@@ -22,6 +22,8 @@ public class SearchUIC implements Initializable
     @FXML private TableView resultsTable;
     
     private SearchC theSearchC;
+    private BookList theBookList;
+    private LoginC theLoginC;
     
     @Override
     public void initialize(URL url, ResourceBundle rb)
@@ -33,10 +35,10 @@ public class SearchUIC implements Initializable
         //String input = userInput.getText();// ¯\_(ツ)_/¯ NullPointer¿
        
         //Enter search term here for now
-        String input = "029375";
+        String input = "Dothraki";
         
         Book bookToDisplay;
-        int searchType = theSearchC.searchBooks(input);
+        int searchType = theSearchC.getSearchType(input);
         if (searchType == 1)
         {
             System.out.println("Search by ISBN");
@@ -50,21 +52,27 @@ public class SearchUIC implements Initializable
             authorLabel.setVisible(true);
             editionLabel.setVisible(true);
             bookImage.setVisible(true);
-            resultsTable.setVisible(true);// ¯\_(ツ)_/¯ NullPointer¿
+            resultsTable.setVisible(true);
             
         }
         if (searchType == 2)
         {
             System.out.println("Search by Title");
             
-            titleLabel.setText(theSearchC.searchByTitle(input));
+            bookToDisplay = theSearchC.searchByTitle(input);
+
+            titleLabel.setText(bookToDisplay.getTitle());
+            isbnLabel.setText(bookToDisplay.getIsbn());
+            authorLabel.setText(bookToDisplay.getAuthor());
+            editionLabel.setText(bookToDisplay.getEdition());
+            
             
             titleLabel.setVisible(true);
             isbnLabel.setVisible(true);
             authorLabel.setVisible(true);
             editionLabel.setVisible(true);
             bookImage.setVisible(true);
-            //resultsTable.setVisible(true);// ¯\_(ツ)_/¯ NullPointer¿
+            resultsTable.setVisible(true);
         }   
     }
     
@@ -72,6 +80,17 @@ public class SearchUIC implements Initializable
     {
         System.out.println("Login button clicked");
         theSearchC.goToLogin();
+        
+//        if (theLoginC.getCurrentUser().isEmpty())
+//        {
+//        System.out.println("Login button clicked");
+//        theSearchC.goToLogin();
+//        }
+//        else
+//        {
+//            System.out.println("Profile button clicked");
+//            theSearchC.goToBookmarks();
+//        }
     }
     
     public void setSearchC(SearchC aSearchC)

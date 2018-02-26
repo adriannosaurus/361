@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.Alert.AlertType;
 
 public class LoginUIC implements Initializable
 {
@@ -18,21 +19,33 @@ public class LoginUIC implements Initializable
     
     @FXML public void handleBackButton (ActionEvent ae) throws Exception
     {
-        System.out.println("back clicked");
+        System.out.println("Cancel login");
         theLoginC.goToSearch();
     }
     
     @FXML private void handleSubmitButton(ActionEvent event) throws Exception {
         
-        System.out.print("Submit pressed. ");
+        System.out.print("Authenticating... ");
         
         String username = usernameField.getText();
         String password = passwordField.getText();
         
-        System.out.println("Auth: " + username + ", " + password);
-        
-        //doesn't like authenticate()
         boolean authenticated = theLoginC.authenticate(username, password);
+        if (authenticated)
+        {
+            theLoginC.goToSearch();
+        }  
+        else
+        {
+            usernameField.clear();
+            passwordField.clear();
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Nope");
+            alert.setHeaderText("Not quite");
+            alert.setContentText("Try again");
+            alert.showAndWait();
+        }
+        
     }
     
     public void setLoginC(LoginC aLoginC)

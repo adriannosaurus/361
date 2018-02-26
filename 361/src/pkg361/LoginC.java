@@ -41,17 +41,18 @@ public class LoginC
     }
     
     public boolean authenticate(String un, String pw)
-    {
-        System.out.print("Passed to LoginC.  ");
-        System.out.println("Creds to verify: " + un + ", " + pw);
-        
+    {       
         if(listOfUsers.verifyLogin(un, pw))
         {
             setCurrentUser(un);
-            System.out.println("User authenticated successfully");
+            System.out.print("User authentication successful. ");
             System.out.println("Current user: " + currentUser);
             return true;
-        }             
+        }
+        else
+        {
+            System.out.println("User authentication failed");
+        }
         
         return false;
     }
@@ -70,4 +71,5 @@ public class LoginC
     {
         SearchC theSearchC = new SearchC(this.stage);
     }
+    
 }

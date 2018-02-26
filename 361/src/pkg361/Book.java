@@ -11,7 +11,7 @@ public class Book implements Serializable
     private String title;
     private String isbn;
     private String author;
-    private int edition;
+    private String edition;
     private double price;
     
     public Book()
@@ -19,11 +19,11 @@ public class Book implements Serializable
         this.title = "";
         this.isbn = "";
         this.author = "";
-        this.edition = 0;
+        this.edition = "";
         this.price = 0.0;
     }
     
-    public Book(String title, String isbn, String author, int edition, double price)
+    public Book(String title, String isbn, String author, String edition, double price)
     {
         this.title = title;
         this.isbn = isbn;
@@ -59,11 +59,11 @@ public class Book implements Serializable
         this.author = author;
     }
 
-    public int getEdition()
+    public String getEdition()
     {
         return edition;
     }
-    public void setEdition(int edition)
+    public void setEdition(String edition)
     {
         this.edition = edition;
     }

@@ -39,7 +39,7 @@ public class SearchC
         }
     }
     
-    public int searchBooks(String input)
+    public int getSearchType(String input)
     {
         String searchTerm = input;
         char first = searchTerm.charAt(0);
@@ -77,17 +77,21 @@ public class SearchC
         return searchIsbn;
     }
     
-    public String searchByTitle(String in)
+    public Book searchByTitle(String in)
     {
-        String searchTerm = in;
-        System.out.println("Term to search: " + searchTerm);
-        
-        return searchTerm;
+        String searchTerm = in; //input
+        System.out.println("SearchC search term: " + in);
+        return new Book();
     }
     
     public void goToLogin()
     {
         LoginC theLoginC = new LoginC(this.stage);
+    }
+    
+    public void goToBookmarks()
+    {
+        BookmarkC theBookmarkC = new BookmarkC(this.stage);
     }
 
 }
