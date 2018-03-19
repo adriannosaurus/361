@@ -117,7 +117,7 @@ public class SearchC
     
     public void goToBookmarks()
     {
-        BookmarkC theBookmarkC = new BookmarkC(this.stage);
+        ProfileC theProfileC = new ProfileC(this.stage);
     }
 
 }

@@ -6,12 +6,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class BookmarkC
+public class ProfileC
 {
     private Stage stage;
-    private BookmarkUIC theBookmarkUIC;
+    private ProfileUIC theBookmarkUIC;
     
-    public BookmarkC(Stage stage)
+    public ProfileC(Stage stage)
     {
         this.stage = stage;
         setBookmarkScene(this.stage);
@@ -21,7 +21,7 @@ public class BookmarkC
     {
         try
         {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("BookmarkUI.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ProfileUI.fxml"));
             Parent login = loader.load();
             theBookmarkUIC = loader.getController();
             theBookmarkUIC.setBookmarkC(this);

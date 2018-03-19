@@ -7,14 +7,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
-public class BookmarkUIC implements Initializable
+public class ProfileUIC implements Initializable
 {
     @FXML private Button backButton;
     @FXML private Label welcomeLabel;
     @FXML private Label tempMessageLabel;
     
     private SearchC theSearchC;
-    private BookmarkC theBookmarkC;
+    private ProfileC theBookmarkC;
     
     @Override
     public void initialize(URL url, ResourceBundle rb)
@@ -26,7 +26,7 @@ public class BookmarkUIC implements Initializable
         theSearchC.goToLogin();
     }
     
-    public void setBookmarkC(BookmarkC aBookmarkC)
+    public void setBookmarkC(ProfileC aBookmarkC)
     {
         this.theBookmarkC = aBookmarkC;
     }
