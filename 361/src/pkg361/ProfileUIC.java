@@ -14,7 +14,7 @@ public class ProfileUIC implements Initializable
     @FXML private Label tempMessageLabel;
     
     private SearchC theSearchC;
-    private ProfileC theBookmarkC;
+    private ProfileC theProfileC;
     
     @Override
     public void initialize(URL url, ResourceBundle rb)
@@ -26,8 +26,8 @@ public class ProfileUIC implements Initializable
         theSearchC.goToLogin();
     }
     
-    public void setBookmarkC(ProfileC aBookmarkC)
+    public void setProfileC(ProfileC aProfileC)
     {
-        this.theBookmarkC = aBookmarkC;
+        this.theProfileC = aProfileC;
     }
 }

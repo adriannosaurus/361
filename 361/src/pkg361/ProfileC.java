@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 public class ProfileC
 {
     private Stage stage;
-    private ProfileUIC theBookmarkUIC;
+    private ProfileUIC theProfileUIC;
     
     public ProfileC(Stage stage)
     {
@@ -23,8 +23,8 @@ public class ProfileC
         {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("ProfileUI.fxml"));
             Parent login = loader.load();
-            theBookmarkUIC = loader.getController();
-            theBookmarkUIC.setBookmarkC(this);
+            theProfileUIC = loader.getController();
+            theProfileUIC.setProfileC(this);
             Scene scene = new Scene(login);
             stage.setScene(scene);
             stage.show();            
