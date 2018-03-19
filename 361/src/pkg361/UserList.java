@@ -57,9 +57,4 @@ public class UserList implements Serializable
         }
         return null;
     }
-    
-    public boolean testMethod()
-    {
-        return true;
-    }
 }

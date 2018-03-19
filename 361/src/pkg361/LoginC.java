@@ -1,6 +1,7 @@
 package pkg361;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -11,8 +12,8 @@ public class LoginC
     private Stage stage;
     private LoginUIC theLoginUIC;
     private UserList listOfUsers;
-    private String currentUser;
-    //private PersistentDataCollection thePDCol;
+    private User currentUser;
+    private PersistentData thePD;
     
     public LoginC(Stage stage)
     {
@@ -59,10 +60,18 @@ public class LoginC
     
     public void setCurrentUser(String username)
     {
-        this.currentUser = username;
+        ArrayList<User> userList = listOfUsers.populateListOfUsers();
+        for (int i = 0; i < userList.size(); ++i)
+        {
+            String localUsername = userList.get(i).getUsername();
+            if (localUsername.equals(username))
+            {
+                currentUser = userList.get(i);
+            }
+        }
     }
     
-    public String getCurrentUser()
+    public User getCurrentUser()
     {
         return currentUser;
     }

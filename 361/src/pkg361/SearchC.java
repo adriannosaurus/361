@@ -12,12 +12,14 @@ public class SearchC
 {
     private Stage stage;
     private SearchUIC theSearchUIC;
+    private LoginC theLoginC;
     BookList bookListClass;
     ArrayList<Book> localListOfBooks;
     
     public SearchC(Stage stage)
     {
         this.stage = stage;
+        bookListClass = new BookList();
         setSearchScene(stage);
     }
     
@@ -43,7 +45,7 @@ public class SearchC
     {
         String searchTerm = input;
         char first = searchTerm.charAt(0);
-        char mid = searchTerm.charAt(5);
+        char mid = searchTerm.charAt(1);
         char last = searchTerm.charAt(searchTerm.length() - 1);
         if (Character.isDigit(first) && Character.isDigit(last) && Character.isDigit(mid))//input.charAt(0)))
         {
@@ -55,39 +57,62 @@ public class SearchC
         }
         else
         {
-            System.out.println("You done messed up");
+            System.out.println("You done did an oops");
             return 0;
         }
     }
     
-    public String searchByIsbn(String in)
+    public Book searchByIsbn(String in)
     {      
-        String searchIsbn = "";
-        Book bookToReturn = new Book();
-        System.out.println("Original string: " + in);        
+        String searchISBN = "";
+        Book toReturn = new Book();
+        localListOfBooks = bookListClass.getListOfBooks();
+             
         for (int i = 0; i < in.length(); ++i)
         {
             char x = in.charAt(i);
             if (Character.isDigit(x))
             {
-                searchIsbn += x;
+                searchISBN += x;
             }
         }
-        System.out.println("Concat: " + searchIsbn);
-        return searchIsbn;
+        
+        System.out.println(searchISBN + "\n");
+        
+        for (int i = 0; i < localListOfBooks.size(); ++i)
+        {
+            String tempISBN = localListOfBooks.get(i).getIsbn();
+            
+            if(tempISBN.contains(in))
+            {
+                toReturn = localListOfBooks.get(i);
+            }
+        }
+        return toReturn;
     }
     
     public Book searchByTitle(String in)
     {        
-        String searchTerm = in; //input
-        System.out.println("SearchC search term: " + in);
-        localListOfBooks = bookListClass.getBookDummyData();
-        return localListOfBooks.get(1);
+        String searchTerm = in.toLowerCase();
+        Book toReturn = new Book();
+        System.out.println(in + "\n");
+        localListOfBooks = bookListClass.getListOfBooks();
+        
+        for (int i = 0; i < localListOfBooks.size(); ++i)
+        {
+            String tempBookName = localListOfBooks.get(i).getTitle().toLowerCase();
+            
+            if(tempBookName.contains(in))
+            {
+                toReturn = localListOfBooks.get(i);
+            }
+        }
+        return toReturn;
     }
     
     public void goToLogin()
     {
-        LoginC theLoginC = new LoginC(this.stage);
+        theLoginC = new LoginC(this.stage);
     }
     
     public void goToBookmarks()

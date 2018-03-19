@@ -16,7 +16,7 @@ public class SearchUIC implements Initializable
     @FXML private Label authorLabel;
     @FXML private Label editionLabel;
     @FXML private ImageView bookImage;
-    @FXML private TextField userInput;
+    @FXML private TextField userInputField;
     @FXML private Button submitButton;
     @FXML private Button loginButton;
     @FXML private TableView resultsTable;
@@ -26,27 +26,25 @@ public class SearchUIC implements Initializable
     private LoginC theLoginC;
     private Book bookToDisplay;
     
-    @Override
-    public void initialize(URL url, ResourceBundle rb)
-    {
-    }
-    
     @FXML public void handleSubmitButton (ActionEvent ae) throws Exception
-    {
-        //String input = userInput.getText();// ¯\_(ツ)_/¯ NullPointer¿
+    {       
+        String input = userInputField.getText();// ¯\_(ツ)_/¯ NullPointer¿
        
         //Enter search term here for now
-        String input = "103-480-2-335";
+        //String input = "34236-27-36-5664";
         
         int searchType = theSearchC.getSearchType(input);
         if (searchType == 1)
         {
-            System.out.println("Search by ISBN");
+            System.out.print("Search by ISBN: ");
             
             //Fixing search by string before search by ISBN
-            //bookToDisplay = theSearchC.searchByIsbn(input);
+            bookToDisplay = theSearchC.searchByIsbn(input);
             
-            isbnLabel.setText("ISBN: " + theSearchC.searchByIsbn(input));
+            titleLabel.setText(bookToDisplay.getTitle());
+            isbnLabel.setText(bookToDisplay.getIsbn());
+            authorLabel.setText(bookToDisplay.getAuthor());
+            editionLabel.setText(bookToDisplay.getEdition()); 
             
             titleLabel.setVisible(true);
             isbnLabel.setVisible(true);
@@ -58,15 +56,14 @@ public class SearchUIC implements Initializable
         }
         if (searchType == 2)
         {
-            System.out.println("Search by Title");
+            System.out.print("Search by Title: ");
             
             bookToDisplay = theSearchC.searchByTitle(input);
 
             titleLabel.setText(bookToDisplay.getTitle());
             isbnLabel.setText(bookToDisplay.getIsbn());
             authorLabel.setText(bookToDisplay.getAuthor());
-            editionLabel.setText(bookToDisplay.getEdition());
-            
+            editionLabel.setText(bookToDisplay.getEdition());            
             
             titleLabel.setVisible(true);
             isbnLabel.setVisible(true);
@@ -79,19 +76,7 @@ public class SearchUIC implements Initializable
     
     @FXML public void handleLoginButton (ActionEvent ae) throws Exception
     {
-        System.out.println("Login button clicked");
         theSearchC.goToLogin();
-        
-//        if (theLoginC.getCurrentUser().isEmpty())
-//        {
-//        System.out.println("Login button clicked");
-//        theSearchC.goToLogin();
-//        }
-//        else
-//        {
-//            System.out.println("Profile button clicked");
-//            theSearchC.goToBookmarks();
-//        }
     }
     
     public void setSearchC(SearchC aSearchC)
@@ -151,5 +136,10 @@ public class SearchUIC implements Initializable
     public void setResultsTable(TableView resultsTable)
     {
         this.resultsTable = resultsTable;
-    }  
+    }
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb)
+    {
+    }
 }

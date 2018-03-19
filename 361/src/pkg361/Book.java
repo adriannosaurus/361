@@ -2,36 +2,50 @@ package pkg361;
 
 import java.io.Serializable;
 import java.util.*;
-import javafx.scene.image.ImageView;
 
 // Figure out how to link images in <default package> to each textbook
 
 public class Book implements Serializable
 {
+    private String vendor;
     private String title;
     private String isbn;
     private String author;
     private String edition;
     private double price;
+    private String image;
     
     public Book()
     {
+        this.vendor = "";
         this.title = "";
         this.isbn = "";
         this.author = "";
         this.edition = "";
         this.price = 0.0;
+        this.image = "";
     }
     
-    public Book(String title, String isbn, String author, String edition, double price)
+    public Book(String vendor, String title, String isbn, String author, String edition, double price, String image)
     {
+        this.vendor = vendor;
         this.title = title;
         this.isbn = isbn;
         this.author = author;
         this.edition = edition;
         this.price = price;
+        this.image = image;
     }
 
+    public String getVendor()
+    {
+        return vendor;
+    }
+    public void setVendor(String vendor)
+    {
+        this.vendor = vendor;
+    }
+    
     public String getTitle()
     {
         return title;
@@ -76,4 +90,15 @@ public class Book implements Serializable
     {
         this.price = price;
     }
+
+    public String getImage()
+   {
+        return image;
+    }
+    public void setImage(String image)
+    {
+        this.image = image;
+    }
+    
+    
 }
