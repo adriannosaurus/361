@@ -6,7 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
+import javafx.scene.image.*;
 import javafx.stage.Stage;
 
 public class SearchUIC implements Initializable
@@ -44,7 +44,9 @@ public class SearchUIC implements Initializable
             titleLabel.setText(bookToDisplay.getTitle());
             isbnLabel.setText(bookToDisplay.getIsbn());
             authorLabel.setText(bookToDisplay.getAuthor());
-            editionLabel.setText(bookToDisplay.getEdition()); 
+            editionLabel.setText(bookToDisplay.getEdition());
+            Image img = new Image(bookToDisplay.getImage());
+            bookImage.setImage(img);
             
             titleLabel.setVisible(true);
             isbnLabel.setVisible(true);
@@ -64,6 +66,8 @@ public class SearchUIC implements Initializable
             isbnLabel.setText(bookToDisplay.getIsbn());
             authorLabel.setText(bookToDisplay.getAuthor());
             editionLabel.setText(bookToDisplay.getEdition());            
+            Image img = new Image(bookToDisplay.getImage());
+            bookImage.setImage(img);
             
             titleLabel.setVisible(true);
             isbnLabel.setVisible(true);

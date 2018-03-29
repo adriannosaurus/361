@@ -47,7 +47,7 @@ public class LoginC
         {
             setCurrentUser(un);
             System.out.print("User authentication successful. ");
-            System.out.println("Current user: " + currentUser);
+            System.out.println("Current user: " + currentUser.getUsername());
             return true;
         }
         else
