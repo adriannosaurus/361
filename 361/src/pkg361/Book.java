@@ -23,7 +23,7 @@ public class Book implements Serializable
         this.author = "";
         this.edition = "";
         this.price = 0.0;
-        this.image = "";
+        this.image = "No.jpg";
     }
     
     public Book(String vendor, String title, String isbn, String author, String edition, double price, String image)

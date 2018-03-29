@@ -28,10 +28,7 @@ public class SearchUIC implements Initializable
     
     @FXML public void handleSubmitButton (ActionEvent ae) throws Exception
     {       
-        String input = userInputField.getText();// ¯\_(ツ)_/¯ NullPointer¿
-       
-        //Enter search term here for now
-        //String input = "34236-27-36-5664";
+        String input = userInputField.getText();
         
         int searchType = theSearchC.getSearchType(input);
         if (searchType == 1)

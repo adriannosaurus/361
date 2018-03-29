@@ -88,6 +88,12 @@ public class SearchC
                 toReturn = localListOfBooks.get(i);
             }
         }
+        
+        if(toReturn.equals(null))
+        {
+            toReturn = new Book();
+        }
+        
         return toReturn;
     }
     
@@ -107,6 +113,12 @@ public class SearchC
                 toReturn = localListOfBooks.get(i);
             }
         }
+        
+        if(toReturn.equals(null))
+        {
+            toReturn = new Book();
+        }
+        
         return toReturn;
     }
     

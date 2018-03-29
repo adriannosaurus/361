@@ -13,7 +13,7 @@ public class ProfileUIC implements Initializable
     @FXML private Label welcomeLabel;
     @FXML private Label tempMessageLabel;
     
-    private SearchC theSearchC;
+    private SearchC_Anon theSearchC;
     private ProfileC theProfileC;
     
     @Override
