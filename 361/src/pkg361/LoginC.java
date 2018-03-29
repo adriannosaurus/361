@@ -78,7 +78,7 @@ public class LoginC
     
     public void goToSearch()
     {
-        SearchC theSearchC = new SearchC (this.stage);
+        SearchC_User theSearchC = new SearchC_User (this.stage);
     }
     
 }
