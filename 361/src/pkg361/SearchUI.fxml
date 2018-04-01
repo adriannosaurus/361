@@ -62,5 +62,6 @@
           <TableColumn prefWidth="90.0" text="Starting Price" />
         </columns>
       </TableView>
+      <Button fx:id="profileButton" layoutX="528.0" layoutY="29.0" mnemonicParsing="false" onAction="#handleProfileButton" text="Profile" visible="false" />
    </children>
 </AnchorPane>

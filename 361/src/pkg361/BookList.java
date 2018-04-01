@@ -16,6 +16,7 @@ public class BookList implements Serializable
     public ArrayList<Book> getDummyData()
     {
         ArrayList<Book> localListOfBooks = new ArrayList();
+        
         localListOfBooks.add(new Book("Amazon", "HTML and CSS: Design and Build Websites", "9781118008188", "Jon Duckett", "Edition 1", 29.99, "HTML.jpg"));
         localListOfBooks.add(new Book("Amazon", "Living Language: Dothraki", "9780804160865", "David J. Peterson", "Edition 1", 19.99, "Dothraki.jpg"));
         localListOfBooks.add(new Book("Amazon", "Android Programming: The Big Nerd Ranch Guide", "9780134706054", "Bill Phillips, Chris Stewart, Kristin Marsicano", "Edition 3", 49.99, "Android.jpg"));
