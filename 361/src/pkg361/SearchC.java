@@ -91,7 +91,7 @@ public class SearchC
         
         if(toReturn.equals(null))
         {
-            toReturn = new Book();
+            toReturn = null;
         }
         
         return toReturn;

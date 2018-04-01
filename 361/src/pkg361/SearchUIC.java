@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.*;
 import javafx.stage.Stage;
 
@@ -29,50 +30,99 @@ public class SearchUIC implements Initializable
     @FXML public void handleSubmitButton (ActionEvent ae) throws Exception
     {       
         String input = userInputField.getText();
-        
-        int searchType = theSearchC.getSearchType(input);
-        if (searchType == 1)
+        if((userInputField.getText().isEmpty()))
         {
-            System.out.print("Search by ISBN: ");
-            
-            //Fixing search by string before search by ISBN
-            bookToDisplay = theSearchC.searchByIsbn(input);
-            
-            titleLabel.setText(bookToDisplay.getTitle());
-            isbnLabel.setText(bookToDisplay.getIsbn());
-            authorLabel.setText(bookToDisplay.getAuthor());
-            editionLabel.setText(bookToDisplay.getEdition());
-            Image img = new Image(bookToDisplay.getImage());
-            bookImage.setImage(img);
-            
-            titleLabel.setVisible(true);
-            isbnLabel.setVisible(true);
-            authorLabel.setVisible(true);
-            editionLabel.setVisible(true);
-            bookImage.setVisible(true);
-            resultsTable.setVisible(true);
-            
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Wait what");
+            alert.setHeaderText("There's no search term");
+            alert.setContentText("Try again");
+            alert.showAndWait();
         }
-        if (searchType == 2)
+        else
         {
-            System.out.print("Search by Title: ");
+            int searchType = theSearchC.getSearchType(input);
             
-            bookToDisplay = theSearchC.searchByTitle(input);
+            
+            if (searchType == 1)
+            {
+                System.out.print("Search by ISBN: ");
 
-            titleLabel.setText(bookToDisplay.getTitle());
-            isbnLabel.setText(bookToDisplay.getIsbn());
-            authorLabel.setText(bookToDisplay.getAuthor());
-            editionLabel.setText(bookToDisplay.getEdition());            
-            Image img = new Image(bookToDisplay.getImage());
-            bookImage.setImage(img);
+                //Fixing search by string before search by ISBN
+                bookToDisplay = theSearchC.searchByIsbn(input);
+                
+                if(bookToDisplay.getTitle().isEmpty())
+                {
+                    titleLabel.setVisible(false);
+                    isbnLabel.setVisible(false);
+                    authorLabel.setVisible(false);
+                    editionLabel.setVisible(false);
+                    bookImage.setVisible(false);
+                    resultsTable.setVisible(false);
+                    
+                    Alert alert = new Alert(AlertType.INFORMATION);
+                    alert.setTitle("Hang on");
+                    alert.setHeaderText("Error 404: Book not found");
+                    alert.setContentText("Try again I guess");
+                    alert.showAndWait();
+                }
+                else
+                {
+                    titleLabel.setText(bookToDisplay.getTitle());
+                    isbnLabel.setText(bookToDisplay.getIsbn());
+                    authorLabel.setText(bookToDisplay.getAuthor());
+                    editionLabel.setText(bookToDisplay.getEdition());
+                    Image img = new Image(bookToDisplay.getImage());
+                    bookImage.setImage(img);
+
+                    titleLabel.setVisible(true);
+                    isbnLabel.setVisible(true);
+                    authorLabel.setVisible(true);
+                    editionLabel.setVisible(true);
+                    bookImage.setVisible(true);
+                    resultsTable.setVisible(true);
+                }
+            }
             
-            titleLabel.setVisible(true);
-            isbnLabel.setVisible(true);
-            authorLabel.setVisible(true);
-            editionLabel.setVisible(true);
-            bookImage.setVisible(true);
-            resultsTable.setVisible(true);
-        }   
+            
+            if (searchType == 2)
+            {
+                System.out.print("Search by Title: ");
+
+                bookToDisplay = theSearchC.searchByTitle(input);
+
+                if(bookToDisplay.getTitle().isEmpty())
+                {
+                    titleLabel.setVisible(false);
+                    isbnLabel.setVisible(false);
+                    authorLabel.setVisible(false);
+                    editionLabel.setVisible(false);
+                    bookImage.setVisible(false);
+                    resultsTable.setVisible(false);
+                    
+                    Alert alert = new Alert(AlertType.INFORMATION);
+                    alert.setTitle("Hang on");
+                    alert.setHeaderText("Error 404: Book not found");
+                    alert.setContentText("Try again I guess");
+                    alert.showAndWait();
+                }
+                else
+                {
+                    titleLabel.setText(bookToDisplay.getTitle());
+                    isbnLabel.setText(bookToDisplay.getIsbn());
+                    authorLabel.setText(bookToDisplay.getAuthor());
+                    editionLabel.setText(bookToDisplay.getEdition());
+                    Image img = new Image(bookToDisplay.getImage());
+                    bookImage.setImage(img);
+
+                    titleLabel.setVisible(true);
+                    isbnLabel.setVisible(true);
+                    authorLabel.setVisible(true);
+                    editionLabel.setVisible(true);
+                    bookImage.setVisible(true);
+                    resultsTable.setVisible(true);
+                }
+            }   
+        }
     }
     
     @FXML public void handleLoginButton (ActionEvent ae) throws Exception

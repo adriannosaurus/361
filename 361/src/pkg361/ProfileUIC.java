@@ -12,8 +12,9 @@ public class ProfileUIC implements Initializable
     @FXML private Button backButton;
     @FXML private Label welcomeLabel;
     @FXML private Label tempMessageLabel;
+    @FXML private TableView bookmarksTable;
     
-    private SearchC_Anon theSearchC;
+    private SearchC theSearchC;
     private ProfileC theProfileC;
     
     @Override

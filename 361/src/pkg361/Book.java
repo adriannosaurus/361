@@ -3,8 +3,6 @@ package pkg361;
 import java.io.Serializable;
 import java.util.*;
 
-// Figure out how to link images in <default package> to each textbook
-
 public class Book implements Serializable
 {
     private String vendor;
