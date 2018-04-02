@@ -13,6 +13,7 @@ public class SearchC
     private Stage stage;
     private SearchUIC theSearchUIC;
     private LoginC theLoginC;
+    private ProfileC theProfileC;
     BookList bookListClass;
     ArrayList<Book> localListOfBooks;
     
@@ -125,6 +126,11 @@ public class SearchC
     public void goToLogin()
     {
         theLoginC = new LoginC(this.stage);
+    }
+    
+    public void goToProfile()
+    {
+        theProfileC = new ProfileC(this.stage);
     }
     
     public void goToBookmarks()

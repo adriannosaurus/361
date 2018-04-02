@@ -34,4 +34,9 @@ public class ProfileC
             e.printStackTrace();
         }
     }
+    
+    public void goToSearch()
+    {
+        SearchC theSearchC = new SearchC (this.stage);
+    }
 }

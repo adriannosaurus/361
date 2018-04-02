@@ -20,6 +20,8 @@ public class SearchUIC implements Initializable
     @FXML private TextField userInputField;
     @FXML private Button submitButton;
     @FXML private Button loginButton;
+    @FXML private Button profileButton;
+    @FXML private Button bookmarkButton;
     @FXML private TableView resultsTable;
     
     private SearchC theSearchC;
@@ -128,6 +130,22 @@ public class SearchUIC implements Initializable
     @FXML public void handleLoginButton (ActionEvent ae) throws Exception
     {
         theSearchC.goToLogin();
+    }
+    
+    @FXML public void handleProfileButton (ActionEvent ae) throws Exception
+    {
+        theSearchC.goToProfile();
+    }
+    
+    @FXML public void handleBookmarkButton (ActionEvent ae) throws Exception
+    {
+        System.out.println("Bookmark under construction");
+    }
+    
+    public void authenticate()
+    {
+        loginButton.setVisible(false);
+        profileButton.setVisible(true);
     }
     
     public void setSearchC(SearchC aSearchC)

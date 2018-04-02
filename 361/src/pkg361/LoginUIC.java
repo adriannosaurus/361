@@ -16,6 +16,7 @@ public class LoginUIC implements Initializable
     @FXML private Button submitButton;
     
     private LoginC theLoginC;
+    private SearchUIC theSearchUIC;
     
     @FXML public void handleBackButton (ActionEvent ae) throws Exception
     {
