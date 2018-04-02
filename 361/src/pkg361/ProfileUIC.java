@@ -43,28 +43,32 @@ public class ProfileUIC implements Initializable
     @FXML public void handleLogoutButton (ActionEvent ae) throws Exception
     {
         System.out.println("Logout");
-        //currUser = null
+        theLoginC.logoutUser();
         theProfileC.goToSearch();
     }
     
     @FXML public void changeUsernameButton (ActionEvent ae) throws Exception
     {
-        System.out.println("change username " + usernameField.getText());
+        currentUser.setUsername(usernameField.getText());
+        System.out.println("Username changed to " + usernameField.getText());
     }
     
     @FXML public void changePasswordButton (ActionEvent ae) throws Exception
     {
-        System.out.println("change password "+ passwordField.getText());
+        currentUser.setPassword(passwordField.getText());
+        System.out.println("Username changed to " + passwordField.getText());
     }
     
     @FXML public void changeFirstnameButton (ActionEvent ae) throws Exception
     {
-        System.out.println("change firstname " + firstnameField.getText());
+        currentUser.setfName(firstnameField.getText());
+        System.out.println("First name changed to " + firstnameField.getText());
     }
     
     @FXML public void changeLastnameButton (ActionEvent ae) throws Exception
     {
-        System.out.println("change lastname " + lastnameField.getText());
+        currentUser.setlName(lastnameField.getText());
+        System.out.println("Last name changed to " + lastnameField.getText());
     }
     
     public void setProfileC(ProfileC aProfileC)

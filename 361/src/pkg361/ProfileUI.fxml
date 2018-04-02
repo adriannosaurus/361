@@ -34,7 +34,7 @@
       <Label fx:id="usernameLabel" layoutX="33.0" layoutY="151.0" text="Username" />
       <TextField fx:id="usernameField" layoutX="33.0" layoutY="168.0" />
       <Button fx:id="usernameButton" layoutX="209.0" layoutY="168.0" mnemonicParsing="false" onAction="#changeUsernameButton" prefHeight="27.0" prefWidth="69.0" text="Change" />
-      <Label fx:id="passwordLabel" layoutX="33.0" layoutY="203.0" text="Password: (ha no I'm not showing this)" />
+      <Label fx:id="passwordLabel" layoutX="33.0" layoutY="203.0" text="Password: (not shown for security)" />
       <Button fx:id="passwordButton" layoutX="209.0" layoutY="220.0" mnemonicParsing="false" onAction="#changePasswordButton" prefHeight="27.0" prefWidth="69.0" text="Change" />
       <Label fx:id="firstnameLabel" layoutX="33.0" layoutY="260.0" text="First name" />
       <TextField fx:id="firstnameField" layoutX="33.0" layoutY="277.0" />

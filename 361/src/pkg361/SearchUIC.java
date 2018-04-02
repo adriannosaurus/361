@@ -28,10 +28,15 @@ public class SearchUIC implements Initializable
     private BookList theBookList;
     private LoginC theLoginC;
     private Book bookToDisplay;
+    private User currentUser;
     
     @FXML public void handleSubmitButton (ActionEvent ae) throws Exception
     {       
         String input = userInputField.getText();
+        
+        //NullPointer¿¿¿
+        //currentUser = theLoginC.getCurrentUser();
+        
         if((userInputField.getText().isEmpty()))
         {
             Alert alert = new Alert(AlertType.INFORMATION);
@@ -60,6 +65,7 @@ public class SearchUIC implements Initializable
                     editionLabel.setVisible(false);
                     bookImage.setVisible(false);
                     resultsTable.setVisible(false);
+                    bookmarkButton.setVisible(false);
                     
                     Alert alert = new Alert(AlertType.INFORMATION);
                     alert.setTitle("Hang on");
@@ -75,6 +81,10 @@ public class SearchUIC implements Initializable
                     editionLabel.setText(bookToDisplay.getEdition());
                     Image img = new Image(bookToDisplay.getImage());
                     bookImage.setImage(img);
+                    if (currentUser != null)
+                    {
+                        bookmarkButton.setVisible(true);
+                    }
 
                     titleLabel.setVisible(true);
                     isbnLabel.setVisible(true);
@@ -100,6 +110,7 @@ public class SearchUIC implements Initializable
                     editionLabel.setVisible(false);
                     bookImage.setVisible(false);
                     resultsTable.setVisible(false);
+                    bookmarkButton.setVisible(false);
                     
                     Alert alert = new Alert(AlertType.INFORMATION);
                     alert.setTitle("Hang on");
@@ -122,6 +133,10 @@ public class SearchUIC implements Initializable
                     editionLabel.setVisible(true);
                     bookImage.setVisible(true);
                     resultsTable.setVisible(true);
+                    if (currentUser != null)
+                    {
+                        bookmarkButton.setVisible(true);
+                    }
                 }
             }   
         }
@@ -146,6 +161,12 @@ public class SearchUIC implements Initializable
     {
         loginButton.setVisible(false);
         profileButton.setVisible(true);
+    }
+    
+    public void deauthenticate()
+    {
+        loginButton.setVisible(true);
+        profileButton.setVisible(false);
     }
     
     public void setSearchC(SearchC aSearchC)

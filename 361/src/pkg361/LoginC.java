@@ -13,7 +13,7 @@ public class LoginC
     private LoginUIC theLoginUIC;
     private SearchUIC theSearchUIC;
     private UserList listOfUsers;
-    private User currentUser;
+    private User currentUser = null;
     private PersistentData thePD;
     
     public LoginC(Stage stage)
@@ -77,6 +77,11 @@ public class LoginC
     public User getCurrentUser()
     {
         return currentUser;
+    }
+    
+    public void logoutUser()
+    {
+        currentUser = null;
     }
     
     public void goToSearch()
