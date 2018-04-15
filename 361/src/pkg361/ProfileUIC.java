@@ -33,7 +33,40 @@ public class ProfileUIC implements Initializable
     private SearchC theSearchC;
     private ProfileC theProfileC;
     private LoginC theLoginC;
-    private User currentUser;
+    private User currentUser;// = theLoginC.getCurrentUser();
+    
+    @FXML public void changeUsernameButton (ActionEvent ae) throws Exception
+    {
+        currentUser = theLoginC.getCurrentUser();
+        currentUser.setUsername(usernameField.getText());
+        System.out.println("Username changed to " + usernameField.getText());
+    }
+    
+    @FXML public void changePasswordButton (ActionEvent ae) throws Exception
+    {
+        currentUser = theLoginC.getCurrentUser();
+        currentUser.setPassword(passwordField.getText());
+        System.out.println("Username changed to " + passwordField.getText());
+    }
+    
+    @FXML public void changeFirstnameButton (ActionEvent ae) throws Exception
+    {
+        currentUser = theLoginC.getCurrentUser();
+        currentUser.setfName(firstnameField.getText());
+        System.out.println("First name changed to " + firstnameField.getText());
+    }
+    
+    @FXML public void changeLastnameButton (ActionEvent ae) throws Exception
+    {
+        currentUser = theLoginC.getCurrentUser();
+        currentUser.setlName(lastnameField.getText());
+        System.out.println("Last name changed to " + lastnameField.getText());
+    }
+    
+    public void setProfileC(ProfileC aProfileC)
+    {
+        this.theProfileC = aProfileC;
+    }
     
     @FXML public void handleBackButton (ActionEvent ae) throws Exception
     {
@@ -45,35 +78,6 @@ public class ProfileUIC implements Initializable
         System.out.println("Logout");
         theLoginC.logoutUser();
         theProfileC.goToSearch();
-    }
-    
-    @FXML public void changeUsernameButton (ActionEvent ae) throws Exception
-    {
-        currentUser.setUsername(usernameField.getText());
-        System.out.println("Username changed to " + usernameField.getText());
-    }
-    
-    @FXML public void changePasswordButton (ActionEvent ae) throws Exception
-    {
-        currentUser.setPassword(passwordField.getText());
-        System.out.println("Username changed to " + passwordField.getText());
-    }
-    
-    @FXML public void changeFirstnameButton (ActionEvent ae) throws Exception
-    {
-        currentUser.setfName(firstnameField.getText());
-        System.out.println("First name changed to " + firstnameField.getText());
-    }
-    
-    @FXML public void changeLastnameButton (ActionEvent ae) throws Exception
-    {
-        currentUser.setlName(lastnameField.getText());
-        System.out.println("Last name changed to " + lastnameField.getText());
-    }
-    
-    public void setProfileC(ProfileC aProfileC)
-    {
-        this.theProfileC = aProfileC;
     }
     
     @Override

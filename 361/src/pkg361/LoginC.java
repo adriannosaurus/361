@@ -47,9 +47,8 @@ public class LoginC
         if(listOfUsers.verifyLogin(un, pw))
         {
             setCurrentUser(un);
-            System.out.print("User authentication successful. ");
-            System.out.println("Current user: " + currentUser.getUsername());
-            //theSearchUIC.authenticate();
+            System.out.println("User authentication successful. " +
+                    "Current user: " + currentUser.getUsername());
             
             return true;
         }

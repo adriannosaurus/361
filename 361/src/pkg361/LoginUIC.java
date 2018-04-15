@@ -26,7 +26,7 @@ public class LoginUIC implements Initializable
     
     @FXML private void handleSubmitButton(ActionEvent event) throws Exception {
         
-        System.out.print("Authenticating... ");
+        System.out.println("Authenticating... ");
         
         String username = usernameField.getText();
         String password = passwordField.getText();
@@ -35,6 +35,9 @@ public class LoginUIC implements Initializable
         if (authenticated)
         {
             theLoginC.goToSearch();
+            User asdf = theLoginC.getCurrentUser();
+            System.out.println(asdf.getUsername());
+            
         }  
         else
         {

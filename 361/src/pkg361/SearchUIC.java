@@ -154,16 +154,20 @@ public class SearchUIC implements Initializable
     
     @FXML public void handleBookmarkButton (ActionEvent ae) throws Exception
     {
-        System.out.println("Bookmark under construction");
+        Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("WHOA");
+            alert.setHeaderText("Under Construction");
+            alert.setContentText("don't break the code pls thx");
+            alert.showAndWait();
     }
     
-    public void authenticate()
+    public void authenticatedButtons()
     {
         loginButton.setVisible(false);
         profileButton.setVisible(true);
     }
     
-    public void deauthenticate()
+    public void deauthenticatedButtons()
     {
         loginButton.setVisible(true);
         profileButton.setVisible(false);
