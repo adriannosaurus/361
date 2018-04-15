@@ -18,7 +18,7 @@ public class Main extends Application
     @Override
     public void start(Stage stage) throws Exception
     {
-        SearchC theSearchC = new SearchC(stage);
+        LoginC theLoginC = new LoginC(stage);
         thePDC = PersistentDataC.getPersistentDataC();
     }
 

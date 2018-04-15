@@ -14,8 +14,8 @@ public class UserList implements Serializable
     
     public ArrayList<User> populateListOfUsers()
     {
-        listOfUsers.add(new User("adrianne", "kubiak"));
-        listOfUsers.add(new User("test", "user"));
+        listOfUsers.add(new User("adrianne", "kubiak", "Adrianne", "Kubiak"));
+        listOfUsers.add(new User("test", "user", "Benadryl", "Christmastree"));
         return listOfUsers;
     }
     

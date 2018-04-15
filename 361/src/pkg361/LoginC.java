@@ -12,6 +12,7 @@ public class LoginC
     private Stage stage;
     private LoginUIC theLoginUIC;
     private SearchUIC theSearchUIC;
+    private NewUserUIC theNewUserUIC;
     private UserList listOfUsers;
     private User currentUser = null;
     private PersistentData thePD;
@@ -47,9 +48,8 @@ public class LoginC
         if(listOfUsers.verifyLogin(un, pw))
         {
             setCurrentUser(un);
-            System.out.println("User authentication successful. " +
+            System.out.println("LOGINC AUTH User authentication successful. " +
                     "Current user: " + currentUser.getUsername());
-            
             return true;
         }
         else
@@ -86,6 +86,17 @@ public class LoginC
     public void goToSearch()
     {
         SearchC theSearchC = new SearchC (this.stage);
+    }
+    
+    public void goToNewUser()
+    {
+        NewUserC theNewUserC = new NewUserC(this.stage);
+    }
+    
+    public void close()
+    {
+        stage.close();
+        System.exit(0);
     }
     
 }

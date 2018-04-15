@@ -5,7 +5,6 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
@@ -34,11 +33,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <ImageView fx:id="bookImage" fitHeight="206.0" fitWidth="160.0" layoutX="35.0" layoutY="141.0" pickOnBounds="true" visible="false">
-         <image>
-            <Image url="@../No.jpg" />
-         </image>
-      </ImageView>
+      <ImageView fx:id="bookImage" fitHeight="206.0" fitWidth="160.0" layoutX="35.0" layoutY="141.0" pickOnBounds="true" visible="false" />
       <Label fx:id="authorLabel" layoutX="35.0" layoutY="347.0" prefHeight="18.0" prefWidth="374.0" text="Author(s): " visible="false">
          <font>
             <Font size="14.0" />
@@ -55,14 +50,13 @@
          </font>
       </TextField>
       <Button fx:id="submitButton" layoutX="459.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleSubmitButton" text="Go" />
-      <Button fx:id="loginButton" layoutX="529.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleLoginButton" text="Log in" />
-      <TableView fx:id="resultsTable" layoutX="284.0" layoutY="141.0" prefHeight="206.0" prefWidth="260.0" visible="false">
+      <TableView fx:id="resultsTable" layoutX="284.0" layoutY="141.0" prefHeight="206.0" prefWidth="260.0">
         <columns>
-          <TableColumn prefWidth="152.0" text="Vendor" />
-          <TableColumn prefWidth="90.0" text="Starting Price" />
+          <TableColumn fx:id="vendorColumn" prefWidth="176.0" text="Vendor" />
+          <TableColumn fx:id="priceColumn" prefWidth="66.0" text="Price" />
         </columns>
       </TableView>
-      <Button fx:id="profileButton" layoutX="528.0" layoutY="61.0" mnemonicParsing="false" onAction="#handleProfileButton" text="Profile" />
-      <Button fx:id="bookmarkButton" layoutX="464.0" layoutY="355.0" mnemonicParsing="false" onAction="#handleBookmarkButton" text="Bookmark" />
+      <Button fx:id="profileButton" layoutX="531.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleProfileButton" text="Profile" />
+      <Button fx:id="bookmarkButton" layoutX="464.0" layoutY="355.0" mnemonicParsing="false" onAction="#handleBookmarkButton" text="Bookmark" visible="false" />
    </children>
 </AnchorPane>

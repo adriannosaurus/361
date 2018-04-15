@@ -23,6 +23,8 @@ public class SearchUIC implements Initializable
     @FXML private Button profileButton;
     @FXML private Button bookmarkButton;
     @FXML private TableView resultsTable;
+    @FXML private TableColumn vendorColumn;
+    @FXML private TableColumn priceColumn;
     
     private SearchC theSearchC;
     private BookList theBookList;
@@ -49,7 +51,7 @@ public class SearchUIC implements Initializable
             
             if (searchType == 1)
             {
-                System.out.print("Search by ISBN: ");
+               System.out.print("Search by ISBN: ");
 
                 //Fixing search by string before search by ISBN
                 bookToDisplay = theSearchC.searchByIsbn(input);
@@ -82,6 +84,11 @@ public class SearchUIC implements Initializable
                     {
                         bookmarkButton.setVisible(true);
                     }
+                    
+                    vendorColumn = new TableColumn("Vendor");
+                    //vendorColumn.setCellValueFactory(;
+                    priceColumn = new TableColumn("Price");
+                    
 
                     titleLabel.setVisible(true);
                     isbnLabel.setVisible(true);
@@ -168,6 +175,11 @@ public class SearchUIC implements Initializable
     {
         loginButton.setVisible(true);
         profileButton.setVisible(false);
+    }
+    
+    public void bookmarkVisible()
+    {
+        bookmarkButton.setVisible(true);
     }
     
     public void setSearchC(SearchC aSearchC)

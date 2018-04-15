@@ -29,11 +29,13 @@ public class ProfileUIC implements Initializable
     @FXML private Button latnameButton;
     
     @FXML private TableView bookmarksTable;
+    @FXML private TableColumn vendorColumn;
+    @FXML private TableColumn priceColumn;
     
     private SearchC theSearchC;
     private ProfileC theProfileC;
     private LoginC theLoginC;
-    private User currentUser;// = theLoginC.getCurrentUser();
+    private User currentUser;
     
     @FXML public void changeUsernameButton (ActionEvent ae) throws Exception
     {

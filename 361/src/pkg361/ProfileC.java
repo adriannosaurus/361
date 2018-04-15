@@ -10,6 +10,8 @@ public class ProfileC
 {
     private Stage stage;
     private ProfileUIC theProfileUIC;
+    private LoginC theLoginC;
+    private User currentUser;
     
     public ProfileC(Stage stage)
     {

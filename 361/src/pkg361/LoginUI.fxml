@@ -21,9 +21,10 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Button fx:id="backButton" layoutX="218.0" layoutY="290.0" mnemonicParsing="false" onAction="#handleBackButton" text="Go back" />
+      <Button fx:id="cancelButton" layoutX="218.0" layoutY="290.0" mnemonicParsing="false" onAction="#handleBackButton" text="Cancel" />
       <TextField fx:id="usernameField" layoutX="218.0" layoutY="187.0" promptText="Username" />
       <PasswordField fx:id="passwordField" layoutX="218.0" layoutY="236.0" promptText="Password" />
       <Button fx:id="submitButton" layoutX="323.0" layoutY="290.0" mnemonicParsing="false" onAction="#handleSubmitButton" text="Submit" />
+      <Button fx:id="newUserButton" layoutX="259.0" layoutY="337.0" mnemonicParsing="false" onAction="#handleNewUserButton" text="New User?" />
    </children>
 </AnchorPane>

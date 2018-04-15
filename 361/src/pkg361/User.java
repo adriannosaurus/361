@@ -24,6 +24,13 @@ public class User implements Serializable
         fName = null;
         lName = null;
     }
+    public User(String username, String password, String fName, String lName)
+    {
+        this.username = username;
+        this.password = password;
+        this.fName = fName;
+        this.lName = lName;
+    }
     
     public boolean isEqual(String username, String password)
     {
