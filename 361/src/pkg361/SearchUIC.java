@@ -34,9 +34,6 @@ public class SearchUIC implements Initializable
     {       
         String input = userInputField.getText();
         
-        //NullPointer¿¿¿
-        //currentUser = theLoginC.getCurrentUser();
-        
         if((userInputField.getText().isEmpty()))
         {
             Alert alert = new Alert(AlertType.INFORMATION);

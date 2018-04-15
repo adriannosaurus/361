@@ -16,6 +16,8 @@ public class SearchC
     private ProfileC theProfileC;
     BookList bookListClass;
     ArrayList<Book> localListOfBooks;
+    ArrayList<String> rVendorList;
+    ArrayList<Double> rPriceList;
     
     public SearchC(Stage stage)
     {
@@ -68,7 +70,10 @@ public class SearchC
         String searchISBN = "";
         Book toReturn = new Book();
         localListOfBooks = bookListClass.getListOfBooks();
+        rVendorList = new ArrayList();
+        rPriceList = new ArrayList();
              
+        //ISBN formatting
         for (int i = 0; i < in.length(); ++i)
         {
             char x = in.charAt(i);
@@ -78,7 +83,7 @@ public class SearchC
             }
         }
         
-        System.out.println(searchISBN + "\n");
+        System.out.println(searchISBN);
         
         for (int i = 0; i < localListOfBooks.size(); ++i)
         {
@@ -87,14 +92,19 @@ public class SearchC
             if(tempISBN.contains(in))
             {
                 toReturn = localListOfBooks.get(i);
+                rVendorList.add(toReturn.getVendor());
+                rPriceList.add(toReturn.getPrice());
             }
+            
         }
+        System.out.println(toReturn.getTitle());
+        System.out.println(rVendorList);
+        System.out.println(rPriceList + "\n");
         
         if(toReturn.equals(null))
         {
             toReturn = null;
         }
-        
         return toReturn;
     }
     
@@ -102,8 +112,10 @@ public class SearchC
     {        
         String searchTerm = in.toLowerCase();
         Book toReturn = new Book();
-        System.out.println(in + "\n");
+        System.out.println(in);
         localListOfBooks = bookListClass.getListOfBooks();
+        rVendorList = new ArrayList();
+        rPriceList = new ArrayList();
         
         for (int i = 0; i < localListOfBooks.size(); ++i)
         {
@@ -112,15 +124,29 @@ public class SearchC
             if(tempBookName.contains(in))
             {
                 toReturn = localListOfBooks.get(i);
+                rVendorList.add(toReturn.getVendor());
+                rPriceList.add(toReturn.getPrice());
             }
         }
+        
+        System.out.println(toReturn.getTitle());
+        System.out.println(rVendorList);
+        System.out.println(rPriceList + "\n");
         
         if(toReturn.equals(null))
         {
             toReturn = new Book();
         }
-        
         return toReturn;
+    }
+    
+    public ArrayList<String> getVendorList()
+    {
+        return rVendorList;
+    }
+    public ArrayList<Double> getPriceList()
+    {
+        return rPriceList;
     }
     
     public void goToLogin()

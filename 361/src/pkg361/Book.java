@@ -80,7 +80,7 @@ public class Book implements Serializable
         this.edition = edition;
     }
     
-    public double setPrice()
+    public double getPrice()
     {
         return price;
     }
