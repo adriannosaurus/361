@@ -16,8 +16,7 @@ public class SearchC
     private ProfileC theProfileC;
     BookList bookListClass;
     ArrayList<Book> localListOfBooks;
-    ArrayList<String> rVendorList;
-    ArrayList<Double> rPriceList;
+    ArrayList<Book> resultsList;
     
     public SearchC(Stage stage)
     {
@@ -70,8 +69,7 @@ public class SearchC
         String searchISBN = "";
         Book toReturn = new Book();
         localListOfBooks = bookListClass.getListOfBooks();
-        rVendorList = new ArrayList();
-        rPriceList = new ArrayList();
+        resultsList = new ArrayList();
              
         //ISBN formatting
         for (int i = 0; i < in.length(); ++i)
@@ -92,14 +90,12 @@ public class SearchC
             if(tempISBN.contains(in))
             {
                 toReturn = localListOfBooks.get(i);
-                rVendorList.add(toReturn.getVendor());
-                rPriceList.add(toReturn.getPrice());
+                resultsList.add(toReturn);
             }
             
         }
         System.out.println(toReturn.getTitle());
-        System.out.println(rVendorList);
-        System.out.println(rPriceList + "\n");
+        System.out.println(resultsList);
         
         if(toReturn.equals(null))
         {
@@ -114,8 +110,7 @@ public class SearchC
         Book toReturn = new Book();
         System.out.println(in);
         localListOfBooks = bookListClass.getListOfBooks();
-        rVendorList = new ArrayList();
-        rPriceList = new ArrayList();
+        resultsList = new ArrayList();
         
         for (int i = 0; i < localListOfBooks.size(); ++i)
         {
@@ -124,14 +119,12 @@ public class SearchC
             if(tempBookName.contains(in))
             {
                 toReturn = localListOfBooks.get(i);
-                rVendorList.add(toReturn.getVendor());
-                rPriceList.add(toReturn.getPrice());
+                resultsList.add(toReturn);
             }
         }
         
         System.out.println(toReturn.getTitle());
-        System.out.println(rVendorList);
-        System.out.println(rPriceList + "\n");
+        System.out.println(resultsList);
         
         if(toReturn.equals(null))
         {
@@ -140,14 +133,11 @@ public class SearchC
         return toReturn;
     }
     
-    public ArrayList<String> getVendorList()
+    public ArrayList<Book> getResultsList()
     {
-        return rVendorList;
+        return resultsList;
     }
-    public ArrayList<Double> getPriceList()
-    {
-        return rPriceList;
-    }
+
     
     public void goToLogin()
     {

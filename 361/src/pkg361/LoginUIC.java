@@ -18,6 +18,7 @@ public class LoginUIC implements Initializable
     
     private LoginC theLoginC;
     private SearchUIC theSearchUIC;
+    private NewUserC theNewUserC;
     private NewUserUIC theNewUserUIC;
     
     @FXML public void handleCancelButton (ActionEvent ae) throws Exception
@@ -64,6 +65,5 @@ public class LoginUIC implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-    }    
-    
+    }
 }

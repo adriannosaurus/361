@@ -11,6 +11,7 @@ public class LoginC
 {
     private Stage stage;
     private LoginUIC theLoginUIC;
+    
     private NewUserC theNewUserC;
     private NewUserUIC theNewUserUIC;
     private UserList listOfUsers;

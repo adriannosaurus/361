@@ -2,13 +2,17 @@ package pkg361;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.*;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 
 public class SearchUIC implements Initializable
 {
@@ -21,9 +25,10 @@ public class SearchUIC implements Initializable
     @FXML private Button submitButton;
     @FXML private Button profileButton;
     @FXML private Button bookmarkButton;
-    @FXML private TableView resultsTable;
-    @FXML private TableColumn vendorColumn;
-    @FXML private TableColumn priceColumn;
+    @FXML private TableView<Book> resultsTable;
+    @FXML private TableColumn<Book, String> vendorColumn;
+    @FXML private TableColumn<Book, String> priceColumn;
+    @FXML private ObservableList<Book> listOfResults;
     
     private SearchC theSearchC;
     private BookList theBookList;
@@ -47,7 +52,7 @@ public class SearchUIC implements Initializable
         {
             int searchType = theSearchC.getSearchType(input);
             
-            
+    // S E A R C H   B Y   I S B N
             if (searchType == 1)
             {
                System.out.print("Search by ISBN: ");
@@ -85,10 +90,12 @@ public class SearchUIC implements Initializable
                     }
                     
                     vendorColumn = new TableColumn("Vendor");
-                    //vendorColumn.setCellValueFactory(;
                     priceColumn = new TableColumn("Price");
+                    vendorColumn.setCellValueFactory(new PropertyValueFactory<Book, String>("vendor"));
+                    priceColumn.setCellValueFactory(new PropertyValueFactory<Book, String>("price"));
+                    listOfResults = FXCollections.observableArrayList(theSearchC.resultsList);
+                    resultsTable.setItems(listOfResults);                    
                     
-
                     titleLabel.setVisible(true);
                     isbnLabel.setVisible(true);
                     authorLabel.setVisible(true);
@@ -98,7 +105,7 @@ public class SearchUIC implements Initializable
                 }
             }
             
-            
+    // S E A R C H   B Y   T I T L E
             if (searchType == 2)
             {
                 System.out.print("Search by Title: ");
@@ -129,6 +136,13 @@ public class SearchUIC implements Initializable
                     editionLabel.setText(bookToDisplay.getEdition());
                     Image img = new Image(bookToDisplay.getImage());
                     bookImage.setImage(img);
+                    
+                    vendorColumn = new TableColumn("Vendor");
+                    priceColumn = new TableColumn("Price");
+                    vendorColumn.setCellValueFactory(new PropertyValueFactory<Book, String>("vendor"));
+                    priceColumn.setCellValueFactory(new PropertyValueFactory<Book, String>("price"));
+                    listOfResults = FXCollections.observableArrayList(theSearchC.resultsList);
+                    resultsTable.setItems(listOfResults);    
 
                     titleLabel.setVisible(true);
                     isbnLabel.setVisible(true);
@@ -136,10 +150,7 @@ public class SearchUIC implements Initializable
                     editionLabel.setVisible(true);
                     bookImage.setVisible(true);
                     resultsTable.setVisible(true);
-                    if (currentUser != null)
-                    {
-                        bookmarkButton.setVisible(true);
-                    }
+                    bookmarkButton.setVisible(true);
                 }
             }   
         }

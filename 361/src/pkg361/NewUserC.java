@@ -16,6 +16,9 @@ public class NewUserC
     private LoginC theLoginC;
     private SearchC theSearchC;
     
+    private UserList listOfUsers;
+    private User newUser;
+    
     public NewUserC(Stage stage)
     {
         this.stage = stage;

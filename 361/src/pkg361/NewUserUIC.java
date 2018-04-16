@@ -25,20 +25,32 @@ public class NewUserUIC implements Initializable
     @FXML private TextField lastnameField;
     
     private SearchC theSearchC;
-    private ProfileC theProfileC;
     private LoginC theLoginC;
     private NewUserC theNewUserC;
-    private User currentUser;
+    private UserList listOfUsers;
+    private User newUser;
+    
+    private String un;
+    private String pw;
+    private String fn;
+    private String ln;
     
     @FXML public void handleCancelButton (ActionEvent ae) throws Exception
     {
-        theProfileC.goToSearch();
+        System.out.println("NEW USER CANCEL");
+        theSearchC.goToLogin();
     }
     
     @FXML public void handleLoginButton (ActionEvent ae) throws Exception
     {
-        System.out.println("Login");
-        theProfileC.goToSearch();
+        System.out.println("NEW USER LOGIN");
+        un = usernameField.getText();
+        pw = passwordField.getText();
+        fn = firstnameField.getText();
+        ln = lastnameField.getText();
+        
+        System.out.println(un + ": " + fn + " " + ln);
+        theLoginC.goToSearch();
     }
     
     public void setNewUserC(NewUserC aNewUserC)
