@@ -19,7 +19,6 @@ public class SearchUIC implements Initializable
     @FXML private ImageView bookImage;
     @FXML private TextField userInputField;
     @FXML private Button submitButton;
-    @FXML private Button loginButton;
     @FXML private Button profileButton;
     @FXML private Button bookmarkButton;
     @FXML private TableView resultsTable;
@@ -146,11 +145,6 @@ public class SearchUIC implements Initializable
         }
     }
     
-    @FXML public void handleLoginButton (ActionEvent ae) throws Exception
-    {
-        theSearchC.goToLogin();
-    }
-    
     @FXML public void handleProfileButton (ActionEvent ae) throws Exception
     {
         theSearchC.goToProfile();
@@ -163,28 +157,6 @@ public class SearchUIC implements Initializable
             alert.setHeaderText("Under Construction");
             alert.setContentText("don't break the code pls thx");
             alert.showAndWait();
-    }
-    
-    public void authenticatedButtons()
-    {
-        loginButton.setVisible(false);
-        profileButton.setVisible(true);
-    }
-    
-    public void deauthenticatedButtons()
-    {
-        loginButton.setVisible(true);
-        profileButton.setVisible(false);
-    }
-    
-    public void bookmarkVisible()
-    {
-        bookmarkButton.setVisible(true);
-    }
-    
-    public void setSearchC(SearchC aSearchC)
-    {
-        this.theSearchC = aSearchC;
     }
 
     public Label getTitleLabel()
@@ -239,6 +211,11 @@ public class SearchUIC implements Initializable
     public void setResultsTable(TableView resultsTable)
     {
         this.resultsTable = resultsTable;
+    }
+    
+    public void setSearchC(SearchC aSearchC)
+    {
+        this.theSearchC = aSearchC;
     }
     
     @Override

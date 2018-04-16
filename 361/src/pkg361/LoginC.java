@@ -11,7 +11,7 @@ public class LoginC
 {
     private Stage stage;
     private LoginUIC theLoginUIC;
-    private SearchUIC theSearchUIC;
+    private NewUserC theNewUserC;
     private NewUserUIC theNewUserUIC;
     private UserList listOfUsers;
     private User currentUser = null;
@@ -30,10 +30,10 @@ public class LoginC
         try
         {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginUI.fxml"));
-            Parent login = loader.load();
+            Parent parent = loader.load();
             theLoginUIC = loader.getController();
             theLoginUIC.setLoginC(this);
-            Scene scene = new Scene(login);
+            Scene scene = new Scene(parent);
             stage.setScene(scene);
             stage.show();            
         }
@@ -48,7 +48,7 @@ public class LoginC
         if(listOfUsers.verifyLogin(un, pw))
         {
             setCurrentUser(un);
-            System.out.println("LOGINC AUTH User authentication successful. " +
+            System.out.println("User authentication successful. " +
                     "Current user: " + currentUser.getUsername());
             return true;
         }

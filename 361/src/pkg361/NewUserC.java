@@ -8,11 +8,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-
 public class NewUserC
 {
     private Stage stage;
     private NewUserUIC theNewUserUIC;
+    
+    private LoginC theLoginC;
+    private SearchC theSearchC;
     
     public NewUserC(Stage stage)
     {
@@ -25,10 +27,10 @@ public class NewUserC
         try
         {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("NewUserUI.fxml"));
-            Parent login = loader.load();
+            Parent parent = loader.load();
             theNewUserUIC = loader.getController();
             theNewUserUIC.setNewUserC(this);
-            Scene scene = new Scene(login);
+            Scene scene = new Scene(parent);
             stage.setScene(scene);
             stage.show();            
         }
@@ -36,5 +38,15 @@ public class NewUserC
         {
             e.printStackTrace();
         }
+    }
+    
+    public void goToLogin()
+    {
+        theLoginC = new LoginC(this.stage);
+    }
+    
+    public void goToSearch()
+    {
+        SearchC theSearchC = new SearchC (this.stage);
     }
 }

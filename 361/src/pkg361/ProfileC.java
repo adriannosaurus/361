@@ -24,10 +24,10 @@ public class ProfileC
         try
         {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("ProfileUI.fxml"));
-            Parent login = loader.load();
+            Parent parent = loader.load();
             theProfileUIC = loader.getController();
             theProfileUIC.setProfileC(this);
-            Scene scene = new Scene(login);
+            Scene scene = new Scene(parent);
             stage.setScene(scene);
             stage.show();            
         }

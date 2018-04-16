@@ -30,11 +30,6 @@ public class NewUserUIC implements Initializable
     private NewUserC theNewUserC;
     private User currentUser;
     
-    public void setNewUserC(NewUserC aNewUserC)
-    {
-        this.theNewUserC = aNewUserC;
-    }
-    
     @FXML public void handleCancelButton (ActionEvent ae) throws Exception
     {
         theProfileC.goToSearch();
@@ -44,6 +39,11 @@ public class NewUserUIC implements Initializable
     {
         System.out.println("Login");
         theProfileC.goToSearch();
+    }
+    
+    public void setNewUserC(NewUserC aNewUserC)
+    {
+        this.theNewUserC = aNewUserC;
     }
     
     @Override

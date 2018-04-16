@@ -18,15 +18,16 @@ public class LoginUIC implements Initializable
     
     private LoginC theLoginC;
     private SearchUIC theSearchUIC;
+    private NewUserUIC theNewUserUIC;
     
-    @FXML public void handleBackButton (ActionEvent ae) throws Exception
+    @FXML public void handleCancelButton (ActionEvent ae) throws Exception
     {
-        System.out.println("Cancel login");
         theLoginC.close();
     }
     
     @FXML public void handleNewUserButton(ActionEvent ae) throws Exception
     {
+        System.out.println("NEW USER BUTTON CLICKED");
         theLoginC.goToNewUser();
     }
     
@@ -40,11 +41,7 @@ public class LoginUIC implements Initializable
         boolean authenticated = theLoginC.authenticate(username, password);
         if (authenticated)
         {
-            theSearchUIC.bookmarkVisible();
-            theLoginC.goToSearch();
-            User curr = theLoginC.getCurrentUser();
-            System.out.println("LOGINUIC SUBMIT " + curr.getUsername());
-            
+            theLoginC.goToSearch();            
         }  
         else
         {

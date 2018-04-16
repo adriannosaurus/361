@@ -31,10 +31,10 @@ public class SearchC
         try
         {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("SearchUI.fxml"));
-            Parent search = loader.load();
+            Parent parent = loader.load();
             theSearchUIC = loader.getController();
             theSearchUIC.setSearchC(this);
-            Scene scene = new Scene(search);
+            Scene scene = new Scene(parent);
             stage.setScene(scene);
             stage.show();            
         }
