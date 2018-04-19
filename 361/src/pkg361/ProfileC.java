@@ -13,20 +13,21 @@ public class ProfileC
     private LoginC theLoginC;
     private User currentUser;
     
-    public ProfileC(Stage stage)
+    public ProfileC(Stage stage, User currentUser)
     {
         this.stage = stage;
-        setBookmarkScene(this.stage);
+        this.currentUser = currentUser;
+        setProfileScene(this.stage);
     }
     
-    public void setBookmarkScene(Stage stage)
+    public void setProfileScene(Stage stage)
     {
         try
         {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("ProfileUI.fxml"));
             Parent parent = loader.load();
             theProfileUIC = loader.getController();
-            theProfileUIC.setProfileC(this);
+            theProfileUIC.setProfileC(this, currentUser);
             Scene scene = new Scene(parent);
             stage.setScene(scene);
             stage.show();            
@@ -39,7 +40,7 @@ public class ProfileC
     
     public void goToSearch()
     {
-        SearchC theSearchC = new SearchC (this.stage);
+        SearchC theSearchC = new SearchC (this.stage, currentUser);
     }
     
     public void close()

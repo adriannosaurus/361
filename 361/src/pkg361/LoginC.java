@@ -86,7 +86,7 @@ public class LoginC
     
     public void goToSearch()
     {
-        SearchC theSearchC = new SearchC (this.stage);
+        SearchC theSearchC = new SearchC (this.stage, currentUser);
     }
     
     public void goToNewUser()

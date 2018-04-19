@@ -55,35 +55,43 @@ public class ProfileUIC implements Initializable
     
     @FXML public void changeUsernameButton (ActionEvent ae) throws Exception
     {
-        currentUser = theLoginC.getCurrentUser();
         currentUser.setUsername(usernameField.getText());
         System.out.println("Username changed to " + usernameField.getText());
+        usernameLabel.setText("Username: " + currentUser.getUsername());
     }
     
     @FXML public void changePasswordButton (ActionEvent ae) throws Exception
     {
-        currentUser = theLoginC.getCurrentUser();
         currentUser.setPassword(passwordField.getText());
-        System.out.println("Username changed to " + passwordField.getText());
+        String pass = "";
+        for (int i = 0; i < (passwordField.getText()).length(); ++i)
+        {
+            pass += "*";
+        }
+        System.out.println("Password changed to " + pass);
     }
     
     @FXML public void changeFirstnameButton (ActionEvent ae) throws Exception
     {
-        currentUser = theLoginC.getCurrentUser();
         currentUser.setfName(firstnameField.getText());
         System.out.println("First name changed to " + firstnameField.getText());
+        firstnameLabel.setText("First name: " + currentUser.getfName());
     }
     
     @FXML public void changeLastnameButton (ActionEvent ae) throws Exception
     {
-        currentUser = theLoginC.getCurrentUser();
         currentUser.setlName(lastnameField.getText());
         System.out.println("Last name changed to " + lastnameField.getText());
+        lastnameLabel.setText("Last name: " + currentUser.getlName());
     }
     
-    public void setProfileC(ProfileC aProfileC)
+    public void setProfileC(ProfileC aProfileC, User currentUser)
     {
         this.theProfileC = aProfileC;
+        this.currentUser = currentUser;
+        usernameLabel.setText("Username: " + currentUser.getUsername());
+        firstnameLabel.setText("First name: " + currentUser.getfName());
+        lastnameLabel.setText("Last name: " + currentUser.getlName());
     }
     
     @Override

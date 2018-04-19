@@ -49,8 +49,9 @@ public class NewUserUIC implements Initializable
         fn = firstnameField.getText();
         ln = lastnameField.getText();
         
-        System.out.println(un + ": " + fn + " " + ln);
-        theLoginC.goToSearch();
+        newUser = new User(un, pw, fn, ln);
+
+        theNewUserC.goToSearch(newUser);
     }
     
     public void setNewUserC(NewUserC aNewUserC)

@@ -28,7 +28,6 @@ public class LoginUIC implements Initializable
     
     @FXML public void handleNewUserButton(ActionEvent ae) throws Exception
     {
-        System.out.println("NEW USER BUTTON CLICKED");
         theLoginC.goToNewUser();
     }
     

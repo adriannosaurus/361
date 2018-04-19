@@ -17,10 +17,12 @@ public class SearchC
     BookList bookListClass;
     ArrayList<Book> localListOfBooks;
     ArrayList<Book> resultsList;
+    User currentUser;
     
-    public SearchC(Stage stage)
+    public SearchC(Stage stage, User currentUser)
     {
         this.stage = stage;
+        this.currentUser = currentUser;
         bookListClass = new BookList();
         setSearchScene(stage);
     }
@@ -146,12 +148,12 @@ public class SearchC
     
     public void goToProfile()
     {
-        theProfileC = new ProfileC(this.stage);
+        theProfileC = new ProfileC(this.stage, currentUser);
     }
     
     public void goToBookmarks()
     {
-        ProfileC theProfileC = new ProfileC(this.stage);
+        ProfileC theProfileC = new ProfileC(this.stage, currentUser);
     }
 
 }

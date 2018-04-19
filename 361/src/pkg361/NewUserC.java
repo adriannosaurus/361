@@ -48,8 +48,9 @@ public class NewUserC
         theLoginC = new LoginC(this.stage);
     }
     
-    public void goToSearch()
+    public void goToSearch(User newUser)
     {
-        SearchC theSearchC = new SearchC (this.stage);
+        this.newUser = newUser;
+        SearchC theSearchC = new SearchC (this.stage, newUser);
     }
 }
