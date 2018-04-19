@@ -2,10 +2,13 @@ package pkg361;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class ProfileUIC implements Initializable
 {
@@ -31,6 +34,7 @@ public class ProfileUIC implements Initializable
     @FXML private TableView bookmarksTable;
     @FXML private TableColumn vendorColumn;
     @FXML private TableColumn priceColumn;
+    @FXML private ObservableList<Book> listOfBookmarks;
     
     private SearchC theSearchC;
     private ProfileC theProfileC;
@@ -92,6 +96,13 @@ public class ProfileUIC implements Initializable
         usernameLabel.setText("Username: " + currentUser.getUsername());
         firstnameLabel.setText("First name: " + currentUser.getfName());
         lastnameLabel.setText("Last name: " + currentUser.getlName());
+        
+        vendorColumn = new TableColumn("Vendor");
+        priceColumn = new TableColumn("Price");
+        vendorColumn.setCellValueFactory(new PropertyValueFactory<Book, String>("vendor"));
+        priceColumn.setCellValueFactory(new PropertyValueFactory<Book, String>("price"));
+        //listOfBookmarks = FXCollections.observableArrayList(theSearchC.resultsList);
+        bookmarksTable.setItems(listOfBookmarks);
     }
     
     @Override
