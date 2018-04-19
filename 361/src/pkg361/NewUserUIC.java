@@ -37,13 +37,11 @@ public class NewUserUIC implements Initializable
     
     @FXML public void handleCancelButton (ActionEvent ae) throws Exception
     {
-        System.out.println("NEW USER CANCEL");
-        theSearchC.goToLogin();
+        theNewUserC.goToLogin();
     }
     
     @FXML public void handleLoginButton (ActionEvent ae) throws Exception
     {
-        System.out.println("NEW USER LOGIN");
         un = usernameField.getText();
         pw = passwordField.getText();
         fn = firstnameField.getText();
@@ -51,6 +49,7 @@ public class NewUserUIC implements Initializable
         
         newUser = new User(un, pw, fn, ln);
 
+        System.out.println("NEW USER: " + un);
         theNewUserC.goToSearch(newUser);
     }
     
