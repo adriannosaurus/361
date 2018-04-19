@@ -50,10 +50,7 @@ public class ProfileUIC implements Initializable
         alert.setHeaderText("You are now logging out");
         alert.setContentText("The application will close now. Okay bye");
         alert.showAndWait();
-        
-        //WHY WON'T YOU CLOSE
-        //WHY ARE YOU A NULLPOINTER YOU WORK IN OTHER CLASSES
-        //theLoginC.close();
+        theProfileC.close();
     }
     
     @FXML public void changeUsernameButton (ActionEvent ae) throws Exception

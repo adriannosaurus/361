@@ -41,4 +41,10 @@ public class ProfileC
     {
         SearchC theSearchC = new SearchC (this.stage);
     }
+    
+    public void close()
+    {
+        stage.close();
+        System.exit(0);
+    }
 }
