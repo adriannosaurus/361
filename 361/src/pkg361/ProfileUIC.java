@@ -62,6 +62,7 @@ public class ProfileUIC implements Initializable
         currentUser.setUsername(usernameField.getText());
         System.out.println("Username changed to " + usernameField.getText());
         usernameLabel.setText("Username: " + currentUser.getUsername());
+        usernameField.clear();
     }
     
     @FXML public void changePasswordButton (ActionEvent ae) throws Exception
@@ -73,6 +74,7 @@ public class ProfileUIC implements Initializable
             pass += "*";
         }
         System.out.println("Password changed to " + pass);
+        passwordField.clear();
     }
     
     @FXML public void changeFirstnameButton (ActionEvent ae) throws Exception
@@ -80,6 +82,7 @@ public class ProfileUIC implements Initializable
         currentUser.setfName(firstnameField.getText());
         System.out.println("First name changed to " + firstnameField.getText());
         firstnameLabel.setText("First name: " + currentUser.getfName());
+        firstnameField.clear();
     }
     
     @FXML public void changeLastnameButton (ActionEvent ae) throws Exception
@@ -87,6 +90,7 @@ public class ProfileUIC implements Initializable
         currentUser.setlName(lastnameField.getText());
         System.out.println("Last name changed to " + lastnameField.getText());
         lastnameLabel.setText("Last name: " + currentUser.getlName());
+        lastnameField.clear();
     }
     
     public void setProfileC(ProfileC aProfileC, User currentUser)
