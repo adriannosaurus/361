@@ -31,9 +31,9 @@ public class ProfileUIC implements Initializable
     @FXML private TextField lastnameField;
     @FXML private Button latnameButton;
     
-    @FXML private TableView bookmarksTable;
-    @FXML private TableColumn vendorColumn;
-    @FXML private TableColumn priceColumn;
+    @FXML private TableView<Book> bookmarksTable = new TableView();
+    @FXML private TableColumn titleColumn = new TableColumn("Title");
+    @FXML private TableColumn priceColumn = new TableColumn("Starting Price");
     @FXML private ObservableList<Book> listOfBookmarks;
     
     private SearchC theSearchC;
@@ -41,6 +41,26 @@ public class ProfileUIC implements Initializable
     private LoginC theLoginC;
     private LoginUIC theLoginUIC;
     private User currentUser;
+    
+    public void setProfileC(ProfileC aProfileC, User currentUser)
+    {
+        this.theProfileC = aProfileC;
+        this.currentUser = currentUser;
+        usernameLabel.setText("Username: " + currentUser.getUsername());
+        firstnameLabel.setText("First name: " + currentUser.getfName());
+        lastnameLabel.setText("Last name: " + currentUser.getlName());
+        
+        listOfBookmarks = FXCollections.observableArrayList(currentUser.getBookmarksList());
+        bookmarksTable.setItems(listOfBookmarks);
+    }
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb)
+    {
+        titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
+        priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
+        bookmarksTable.setItems(listOfBookmarks);
+    }
     
     @FXML public void handleBackButton (ActionEvent ae) throws Exception
     {
@@ -91,27 +111,5 @@ public class ProfileUIC implements Initializable
         System.out.println("Last name changed to " + lastnameField.getText());
         lastnameLabel.setText("Last name: " + currentUser.getlName());
         lastnameField.clear();
-    }
-    
-    public void setProfileC(ProfileC aProfileC, User currentUser)
-    {
-        this.theProfileC = aProfileC;
-        this.currentUser = currentUser;
-        usernameLabel.setText("Username: " + currentUser.getUsername());
-        firstnameLabel.setText("First name: " + currentUser.getfName());
-        lastnameLabel.setText("Last name: " + currentUser.getlName());
-        
-        listOfBookmarks = FXCollections.observableArrayList(currentUser.getBookmarksList());
-        bookmarksTable.setItems(listOfBookmarks);
-    }
-    
-    @Override
-    public void initialize(URL url, ResourceBundle rb)
-    {
-        vendorColumn = new TableColumn("Vendor");
-        priceColumn = new TableColumn("Price");
-        vendorColumn.setCellValueFactory(new PropertyValueFactory<>("vendor"));
-        priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
-        bookmarksTable.setItems(listOfBookmarks);
     }
 }

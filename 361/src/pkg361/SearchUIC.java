@@ -25,9 +25,9 @@ public class SearchUIC implements Initializable
     @FXML private Button submitButton;
     @FXML private Button profileButton;
     @FXML private Button bookmarkButton;
-    @FXML private TableView<Book> resultsTable;
-    @FXML private TableColumn<Book, String> vendorColumn;
-    @FXML private TableColumn<Book, String> priceColumn;
+    @FXML private TableView<Book> resultsTable = new TableView();
+    @FXML private TableColumn vendorColumn = new TableColumn("Vendor");
+    @FXML private TableColumn priceColumn = new TableColumn("Price");
     @FXML private ObservableList<Book> listOfResults;
     
     private SearchC theSearchC;
@@ -86,8 +86,6 @@ public class SearchUIC implements Initializable
                     bookImage.setImage(img);
                     bookmarkButton.setVisible(true);
                     
-                    vendorColumn = new TableColumn("Vendor");
-                    priceColumn = new TableColumn("Price");
                     vendorColumn.setCellValueFactory(new PropertyValueFactory<>("vendor"));
                     priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
                     listOfResults = FXCollections.observableArrayList(theSearchC.getResultsList());
@@ -134,8 +132,6 @@ public class SearchUIC implements Initializable
                     Image img = new Image(bookToDisplay.getImage());
                     bookImage.setImage(img);
                     
-                    vendorColumn = new TableColumn("Vendor");
-                    priceColumn = new TableColumn("Price");
                     vendorColumn.setCellValueFactory(new PropertyValueFactory<>("vendor"));
                     priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
                     listOfResults = FXCollections.observableArrayList(theSearchC.getResultsList());
