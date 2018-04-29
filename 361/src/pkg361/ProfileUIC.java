@@ -105,7 +105,7 @@ public class ProfileUIC implements Initializable
         priceColumn = new TableColumn("Price");
         vendorColumn.setCellValueFactory(new PropertyValueFactory<Book, String>("vendor"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<Book, String>("price"));
-        //listOfBookmarks = FXCollections.observableArrayList(theSearchC.resultsList);
+        listOfBookmarks = FXCollections.observableArrayList(currentUser.getBookmarksList());
         bookmarksTable.setItems(listOfBookmarks);
     }
     

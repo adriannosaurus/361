@@ -14,10 +14,11 @@ public class SearchC
     private SearchUIC theSearchUIC;
     private LoginC theLoginC;
     private ProfileC theProfileC;
-    BookList bookListClass;
-    ArrayList<Book> localListOfBooks;
-    ArrayList<Book> resultsList;
-    User currentUser;
+    
+    private BookList bookListClass;
+    private ArrayList<Book> localListOfBooks;
+    private ArrayList<Book> resultsList;
+    private User currentUser;
     
     public SearchC(Stage stage, User currentUser)
     {
@@ -97,7 +98,11 @@ public class SearchC
             
         }
         System.out.println(toReturn.getTitle());
-        System.out.println(resultsList);
+        for (Book b: resultsList)
+        {
+            System.out.println("    " + b.getVendor() + " offers the book for $" + b.getPrice());
+        }
+        System.out.println();
         
         if(toReturn.equals(null))
         {
@@ -124,9 +129,12 @@ public class SearchC
                 resultsList.add(toReturn);
             }
         }
-        
         System.out.println(toReturn.getTitle());
-        System.out.println(resultsList);
+        for (Book b: resultsList)
+        {
+            System.out.println("    " + b.getVendor() + " offers the book for $" + b.getPrice());
+        }
+        System.out.println();
         
         if(toReturn.equals(null))
         {
@@ -139,7 +147,11 @@ public class SearchC
     {
         return resultsList;
     }
-
+    
+    public User getCurrentUser()
+    {
+        return currentUser;
+    }
     
     public void goToLogin()
     {

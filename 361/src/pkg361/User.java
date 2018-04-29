@@ -1,6 +1,7 @@
 package pkg361;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class User implements Serializable
 {
@@ -8,7 +9,7 @@ public class User implements Serializable
     private String password;
     private String fName;
     private String lName;
-    //private Profile profile;
+    private ArrayList<Book> bookmarksList;
     
     public User()
     {
@@ -32,9 +33,19 @@ public class User implements Serializable
         this.lName = lName;
     }
     
+    public void addBookmark(Book toAdd)
+    {
+        System.out.println("Add to bookmark: " + toAdd.getTitle());
+    }
+    
     public boolean isEqual(String username, String password)
     {
         return (username.equals(this.username) && password.equals(this.password));
+    }
+    
+    public ArrayList<Book> getBookmarksList()
+    {
+        return bookmarksList;
     }
 
     public String getUsername()

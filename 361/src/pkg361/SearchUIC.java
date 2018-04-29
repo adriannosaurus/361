@@ -84,16 +84,13 @@ public class SearchUIC implements Initializable
                     editionLabel.setText(bookToDisplay.getEdition());
                     Image img = new Image(bookToDisplay.getImage());
                     bookImage.setImage(img);
-                    if (currentUser != null)
-                    {
-                        bookmarkButton.setVisible(true);
-                    }
+                    bookmarkButton.setVisible(true);
                     
                     vendorColumn = new TableColumn("Vendor");
                     priceColumn = new TableColumn("Price");
                     vendorColumn.setCellValueFactory(new PropertyValueFactory<Book, String>("vendor"));
                     priceColumn.setCellValueFactory(new PropertyValueFactory<Book, String>("price"));
-                    listOfResults = FXCollections.observableArrayList(theSearchC.resultsList);
+                    listOfResults = FXCollections.observableArrayList(theSearchC.getResultsList());
                     resultsTable.setItems(listOfResults);                    
                     
                     titleLabel.setVisible(true);
@@ -141,7 +138,7 @@ public class SearchUIC implements Initializable
                     priceColumn = new TableColumn("Price");
                     vendorColumn.setCellValueFactory(new PropertyValueFactory<Book, String>("vendor"));
                     priceColumn.setCellValueFactory(new PropertyValueFactory<Book, String>("price"));
-                    listOfResults = FXCollections.observableArrayList(theSearchC.resultsList);
+                    listOfResults = FXCollections.observableArrayList(theSearchC.getResultsList());
                     resultsTable.setItems(listOfResults);    
 
                     titleLabel.setVisible(true);
@@ -163,11 +160,7 @@ public class SearchUIC implements Initializable
     
     @FXML public void handleBookmarkButton (ActionEvent ae) throws Exception
     {
-        Alert alert = new Alert(AlertType.INFORMATION);
-            alert.setTitle("WHOA");
-            alert.setHeaderText("Under Construction");
-            alert.setContentText("don't break the code pls thx");
-            alert.showAndWait();
+        currentUser.addBookmark(bookToDisplay);
     }
 
     public Label getTitleLabel()
@@ -227,6 +220,7 @@ public class SearchUIC implements Initializable
     public void setSearchC(SearchC aSearchC)
     {
         this.theSearchC = aSearchC;
+        currentUser = theSearchC.getCurrentUser();
     }
     
     @Override
