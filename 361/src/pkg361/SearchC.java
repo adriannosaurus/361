@@ -132,7 +132,7 @@ public class SearchC
         System.out.println(toReturn.getTitle());
         for (Book b: resultsList)
         {
-            System.out.println("    " + b.getVendor() + " offers the book for $" + b.getPrice());
+            System.out.println("    " + b.getVendor() + " offers " + b.getShortTitle()+ " for $" + b.getPrice());
         }
         System.out.println();
         

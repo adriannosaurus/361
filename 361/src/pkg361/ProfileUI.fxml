@@ -27,8 +27,8 @@
       <Label fx:id="welcomeLabel" layoutX="328.0" layoutY="37.0" />
       <TableView fx:id="bookmarksTable" layoutX="294.0" layoutY="151.0" prefHeight="206.0" prefWidth="260.0">
          <columns>
-            <TableColumn fx:id="vendorColumn" prefWidth="144.0" text="Title" />
-            <TableColumn fx:id="priceColumn" prefWidth="98.0" text="Starting Price" />
+            <TableColumn fx:id="titleColumn" prefWidth="166.0" text="Title" />
+            <TableColumn fx:id="priceColumn" prefWidth="93.0" text="Starting Price" />
          </columns>
       </TableView>
       <Label fx:id="usernameLabel" layoutX="33.0" layoutY="151.0" text="Username" />

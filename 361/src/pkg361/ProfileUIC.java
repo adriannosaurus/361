@@ -32,7 +32,7 @@ public class ProfileUIC implements Initializable
     @FXML private Button latnameButton;
     
     @FXML private TableView<Book> bookmarksTable = new TableView();
-    @FXML private TableColumn titleColumn = new TableColumn("Title");
+    @FXML private TableColumn titleColumn = new TableColumn("Vendor");
     @FXML private TableColumn priceColumn = new TableColumn("Starting Price");
     @FXML private ObservableList<Book> listOfBookmarks;
     
@@ -57,7 +57,7 @@ public class ProfileUIC implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
+        titleColumn.setCellValueFactory(new PropertyValueFactory<>("shortTitle"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
         bookmarksTable.setItems(listOfBookmarks);
     }

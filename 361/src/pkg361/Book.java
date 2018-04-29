@@ -7,6 +7,7 @@ public class Book implements Serializable
 {
     private String vendor;
     private String title;
+    private String shortTitle;
     private String isbn;
     private String author;
     private String edition;
@@ -17,6 +18,7 @@ public class Book implements Serializable
     {
         this.vendor = "";
         this.title = "";
+        this.shortTitle = "";
         this.isbn = "";
         this.author = "";
         this.edition = "";
@@ -24,10 +26,11 @@ public class Book implements Serializable
         this.image = "No.jpg";
     }
     
-    public Book(String vendor, String title, String isbn, String author, String edition, double price, String image)
+    public Book(String vendor, String title, String shortTitle, String isbn, String author, String edition, double price, String image)
     {
         this.vendor = vendor;
         this.title = title;
+        this.shortTitle = shortTitle;
         this.isbn = isbn;
         this.author = author;
         this.edition = edition;
@@ -42,6 +45,15 @@ public class Book implements Serializable
     public void setVendor(String vendor)
     {
         this.vendor = vendor;
+    }
+    
+    public String getShortTitle()
+    {
+        return shortTitle;
+    }
+    public void setShortTitle(String shortTitle)
+    {
+        this.shortTitle = shortTitle;
     }
     
     public String getTitle()
