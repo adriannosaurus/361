@@ -77,4 +77,9 @@ public class User implements Serializable
         this.lName = lName;
     }
     
+    public void test()
+    {
+        // testing git > commit > push
+    }
+    
 }
