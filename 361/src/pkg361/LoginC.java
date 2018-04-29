@@ -16,7 +16,6 @@ public class LoginC
     private NewUserUIC theNewUserUIC;
     private UserList listOfUsers;
     private User currentUser = null;
-    private PersistentData thePD;
     
     public LoginC(Stage stage)
     {

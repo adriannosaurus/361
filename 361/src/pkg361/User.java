@@ -9,15 +9,8 @@ public class User implements Serializable
     private String password;
     private String fName;
     private String lName;
-    private ArrayList<Book> bookmarksList;
+    private ArrayList<Book> bookmarksList = new ArrayList();
     
-    public User()
-    {
-        this.username = "username";
-        this.password = "password";
-        fName = null;
-        lName = null;
-    }
     public User(String username, String password)
     {
         this.username = username;
@@ -35,7 +28,7 @@ public class User implements Serializable
     
     public void addBookmark(Book toAdd)
     {
-        System.out.println("Add to bookmark: " + toAdd.getTitle());
+        bookmarksList.add(toAdd);
     }
     
     public boolean isEqual(String username, String password)

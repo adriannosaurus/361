@@ -9,7 +9,6 @@ import java.sql.*;
 
 public class Main extends Application
 {
-    private static PersistentDataC thePDC;
     public static void main(String[] args) throws SQLException, ClassNotFoundException
     {
         launch(args);
@@ -19,7 +18,6 @@ public class Main extends Application
     public void start(Stage stage) throws Exception
     {
         LoginC theLoginC = new LoginC(stage);
-        thePDC = PersistentDataC.getPersistentDataC();
     }
 
 }

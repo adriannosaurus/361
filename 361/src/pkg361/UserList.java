@@ -16,6 +16,7 @@ public class UserList implements Serializable
     {
         listOfUsers.add(new User("adrianne", "kubiak", "Adrianne", "Kubiak"));
         listOfUsers.add(new User("test", "user", "Benadryl", "Christmastree"));
+        listOfUsers.add(new User("asdf", "asdf"));
         return listOfUsers;
     }
     

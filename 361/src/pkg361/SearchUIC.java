@@ -88,8 +88,8 @@ public class SearchUIC implements Initializable
                     
                     vendorColumn = new TableColumn("Vendor");
                     priceColumn = new TableColumn("Price");
-                    vendorColumn.setCellValueFactory(new PropertyValueFactory<Book, String>("vendor"));
-                    priceColumn.setCellValueFactory(new PropertyValueFactory<Book, String>("price"));
+                    vendorColumn.setCellValueFactory(new PropertyValueFactory<>("vendor"));
+                    priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
                     listOfResults = FXCollections.observableArrayList(theSearchC.getResultsList());
                     resultsTable.setItems(listOfResults);                    
                     
@@ -136,8 +136,8 @@ public class SearchUIC implements Initializable
                     
                     vendorColumn = new TableColumn("Vendor");
                     priceColumn = new TableColumn("Price");
-                    vendorColumn.setCellValueFactory(new PropertyValueFactory<Book, String>("vendor"));
-                    priceColumn.setCellValueFactory(new PropertyValueFactory<Book, String>("price"));
+                    vendorColumn.setCellValueFactory(new PropertyValueFactory<>("vendor"));
+                    priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
                     listOfResults = FXCollections.observableArrayList(theSearchC.getResultsList());
                     resultsTable.setItems(listOfResults);    
 

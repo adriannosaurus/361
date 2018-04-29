@@ -101,10 +101,6 @@ public class ProfileUIC implements Initializable
         firstnameLabel.setText("First name: " + currentUser.getfName());
         lastnameLabel.setText("Last name: " + currentUser.getlName());
         
-        vendorColumn = new TableColumn("Vendor");
-        priceColumn = new TableColumn("Price");
-        vendorColumn.setCellValueFactory(new PropertyValueFactory<Book, String>("vendor"));
-        priceColumn.setCellValueFactory(new PropertyValueFactory<Book, String>("price"));
         listOfBookmarks = FXCollections.observableArrayList(currentUser.getBookmarksList());
         bookmarksTable.setItems(listOfBookmarks);
     }
@@ -112,5 +108,10 @@ public class ProfileUIC implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
+        vendorColumn = new TableColumn("Vendor");
+        priceColumn = new TableColumn("Price");
+        vendorColumn.setCellValueFactory(new PropertyValueFactory<>("vendor"));
+        priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
+        bookmarksTable.setItems(listOfBookmarks);
     }
 }
