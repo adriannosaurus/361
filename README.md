@@ -11,25 +11,25 @@ Below is a list of all of the classes in the project and a quick summary of what
 Book - Creates an object of type Book, where information is stored about each book in the system.
 BookList - Contains a list of books. Future updates may see this stored in a database instead.
 
-LoginC - Controls the login, which entails authenticating users against the UserList.
-LoginUI - 
-LoginUIC - 
+LoginC - Controller for the login flow, which entails authenticating users against the UserList.
+LoginUI - Interface for the login screen.
+LoginUIC - Controller for the login interface.
 
-Main - 
+Main - Starts the application.
 
-NewUserC - 
-NewUserUI - 
-NewUserUIC - 
+NewUserC - Controller for the new user flow, which entails adding new users to the UserList.
+NewUserUI - Interface for the new user screen.
+NewUserUIC - Controller for the new user interface.
 
-ProfileC - 
-ProfileUI - 
-ProfileUIC - 
+ProfileC - Controller for the profile info, which entails updating information and managing bookmarks.
+ProfileUI - Interface for the profile screen.
+ProfileUIC - Controller for the profile interface.
 
-SearchC - 
-SearchUI - 
-SearchUIC - 
+SearchC - Controller for the search functionality, which entails searching the BookList for potential matches.
+SearchUI - Interface for the search screen.
+SearchUIC - Controller for the search interface.
 
-User - 
-UserList - 
+User - Creates an object of type User, where information is stored about each user in the system.
+UserList - Contains a list of users. Future updates may see this stored in a database instead.
 
 It is also worth noting that there is a PersistentData class and an accompanying controller. That functionality is under construction.
