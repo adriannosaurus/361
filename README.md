@@ -8,8 +8,8 @@ I decided to design a prototype for a textbook price match application. The idea
 
 Below is a list of all of the classes in the project and a quick summary of what they do:
 
-Book - 
-BookList - 
+Book - Creates an object of type Book, where information is stored about each book in the system.
+BookList - Contains a list of books. Future updates may see this stored in a database instead.
 
 LoginC - 
 LoginUI - 
