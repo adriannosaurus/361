@@ -42,6 +42,57 @@ public class ProfileUIC implements Initializable
     private LoginUIC theLoginUIC;
     private User currentUser;
     
+    
+    //BUTTON HANDLERS
+    @FXML public void handleBackButton (ActionEvent ae) throws Exception
+    {
+        theProfileC.goToSearch();
+    }
+    @FXML public void handleLogoutButton (ActionEvent ae) throws Exception
+    {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("LOGOUT");
+        alert.setHeaderText("You are now logging out");
+        alert.setContentText("The application will close now. Okay bye");
+        alert.showAndWait();
+        theProfileC.close();
+    }
+    
+    //CHANGE INFO
+    @FXML public void changeUsernameButton (ActionEvent ae) throws Exception
+    {
+        currentUser.setUsername(usernameField.getText());
+        System.out.println("Username changed to " + usernameField.getText());
+        usernameLabel.setText("Username: " + currentUser.getUsername());
+        usernameField.clear();
+    }
+    @FXML public void changePasswordButton (ActionEvent ae) throws Exception
+    {
+        currentUser.setPassword(passwordField.getText());
+        String pass = "";
+        for (int i = 0; i < (passwordField.getText()).length(); ++i)
+        {
+            pass += "*";
+        }
+        System.out.println("Password changed to " + pass);
+        passwordField.clear();
+    }
+    @FXML public void changeFirstnameButton (ActionEvent ae) throws Exception
+    {
+        currentUser.setfName(firstnameField.getText());
+        System.out.println("First name changed to " + firstnameField.getText());
+        firstnameLabel.setText("First name: " + currentUser.getfName());
+        firstnameField.clear();
+    }
+    @FXML public void changeLastnameButton (ActionEvent ae) throws Exception
+    {
+        currentUser.setlName(lastnameField.getText());
+        System.out.println("Last name changed to " + lastnameField.getText());
+        lastnameLabel.setText("Last name: " + currentUser.getlName());
+        lastnameField.clear();
+    }
+    
+    //SET SCENE
     public void setProfileC(ProfileC aProfileC, User currentUser)
     {
         this.theProfileC = aProfileC;
@@ -60,56 +111,5 @@ public class ProfileUIC implements Initializable
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("shortTitle"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
         bookmarksTable.setItems(listOfBookmarks);
-    }
-    
-    @FXML public void handleBackButton (ActionEvent ae) throws Exception
-    {
-        theProfileC.goToSearch();
-    }
-    
-    @FXML public void handleLogoutButton (ActionEvent ae) throws Exception
-    {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("LOGOUT");
-        alert.setHeaderText("You are now logging out");
-        alert.setContentText("The application will close now. Okay bye");
-        alert.showAndWait();
-        theProfileC.close();
-    }
-    
-    @FXML public void changeUsernameButton (ActionEvent ae) throws Exception
-    {
-        currentUser.setUsername(usernameField.getText());
-        System.out.println("Username changed to " + usernameField.getText());
-        usernameLabel.setText("Username: " + currentUser.getUsername());
-        usernameField.clear();
-    }
-    
-    @FXML public void changePasswordButton (ActionEvent ae) throws Exception
-    {
-        currentUser.setPassword(passwordField.getText());
-        String pass = "";
-        for (int i = 0; i < (passwordField.getText()).length(); ++i)
-        {
-            pass += "*";
-        }
-        System.out.println("Password changed to " + pass);
-        passwordField.clear();
-    }
-    
-    @FXML public void changeFirstnameButton (ActionEvent ae) throws Exception
-    {
-        currentUser.setfName(firstnameField.getText());
-        System.out.println("First name changed to " + firstnameField.getText());
-        firstnameLabel.setText("First name: " + currentUser.getfName());
-        firstnameField.clear();
-    }
-    
-    @FXML public void changeLastnameButton (ActionEvent ae) throws Exception
-    {
-        currentUser.setlName(lastnameField.getText());
-        System.out.println("Last name changed to " + lastnameField.getText());
-        lastnameLabel.setText("Last name: " + currentUser.getlName());
-        lastnameField.clear();
     }
 }

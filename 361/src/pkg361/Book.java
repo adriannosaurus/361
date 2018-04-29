@@ -14,6 +14,7 @@ public class Book implements Serializable
     private double price;
     private String image;
     
+    //CONSTRUCTORS
     public Book()
     {
         this.vendor = "";
@@ -25,7 +26,6 @@ public class Book implements Serializable
         this.price = 0.0;
         this.image = "No.jpg";
     }
-    
     public Book(String vendor, String title, String shortTitle, String isbn, String author, String edition, double price, String image)
     {
         this.vendor = vendor;
@@ -38,6 +38,7 @@ public class Book implements Serializable
         this.image = image;
     }
 
+    // GETTERS AND SETTERS
     public String getVendor()
     {
         return vendor;

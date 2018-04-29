@@ -36,6 +36,7 @@ public class SearchUIC implements Initializable
     private Book bookToDisplay;
     private User currentUser;
     
+    //BUTTON HANDLERS
     @FXML public void handleSubmitButton (ActionEvent ae) throws Exception
     {       
         String input = userInputField.getText();
@@ -159,6 +160,7 @@ public class SearchUIC implements Initializable
         currentUser.addBookmark(bookToDisplay);
     }
 
+    //GETTERS AND SETTERS
     public Label getTitleLabel()
     {
         return titleLabel;

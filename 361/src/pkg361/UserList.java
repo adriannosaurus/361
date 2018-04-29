@@ -7,19 +7,23 @@ public class UserList implements Serializable
 {
     private ArrayList<User> listOfUsers = new ArrayList();
     
+    //CONSTRUCTOR
     public UserList()
     {
         listOfUsers = populateListOfUsers();
     }
     
+    //ALL DEM USERS
     public ArrayList<User> populateListOfUsers()
     {
-        listOfUsers.add(new User("adrianne", "kubiak", "Adrianne", "Kubiak"));
-        listOfUsers.add(new User("test", "user", "Benadryl", "Christmastree"));
-        listOfUsers.add(new User("asdf", "asdf"));
+        listOfUsers.add(new User("adriannosaurus", "pass", "Adrianne", "Kubiak"));
+        listOfUsers.add(new User("nada", "pass", "Nada", "Ziab"));
+        listOfUsers.add(new User("aaron", "pass", "Aaron", "Stricker"));
+        listOfUsers.add(new User("test", "user"));
         return listOfUsers;
     }
     
+    //USER VERIFICATION
     public boolean verifyLogin(String userIn, String passIn)
     {
         for (User x: listOfUsers)
@@ -32,6 +36,7 @@ public class UserList implements Serializable
         return false;
     }
     
+    //NEW USER
     public boolean addUser(User toAdd)
     {
         boolean success = true;
@@ -47,6 +52,7 @@ public class UserList implements Serializable
         return success;
     }
     
+    //GETTER
     public User getUser(String username)
     {
         for (User x: listOfUsers)

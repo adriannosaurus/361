@@ -19,12 +19,14 @@ public class NewUserC
     private UserList listOfUsers;
     private User newUser;
     
+    //CONSTRUCTOR
     public NewUserC(Stage stage)
     {
         this.stage = stage;
         setNewUserScene(stage);
     }
     
+    //SET SCENE
     public void setNewUserScene(Stage stage)
     {
         try
@@ -43,11 +45,11 @@ public class NewUserC
         }
     }
     
+    //NAVIGATION
     public void goToLogin()
     {
         theLoginC = new LoginC(this.stage);
     }
-    
     public void goToSearch(User newUser)
     {
         this.newUser = newUser;

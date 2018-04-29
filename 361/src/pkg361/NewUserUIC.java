@@ -17,6 +17,9 @@ public class NewUserUIC implements Initializable
     
     @FXML private Label passwordLabel;
     @FXML private PasswordField passwordField;
+    
+    @FXML private Label cPasswordLabel;
+    @FXML private PasswordField cPasswordField;
         
     @FXML private Label firstnameLabel;
     @FXML private TextField firstnameField;
@@ -32,27 +35,40 @@ public class NewUserUIC implements Initializable
     
     private String un;
     private String pw;
+    private String cpw;
     private String fn;
     private String ln;
     
+    //BUTTON HANDLERS
     @FXML public void handleCancelButton (ActionEvent ae) throws Exception
     {
         theNewUserC.goToLogin();
     }
-    
     @FXML public void handleLoginButton (ActionEvent ae) throws Exception
     {
         un = usernameField.getText();
         pw = passwordField.getText();
+        cpw = cPasswordField.getText();
         fn = firstnameField.getText();
         ln = lastnameField.getText();
         
-        newUser = new User(un, pw, fn, ln);
-
-        System.out.println("NEW USER: " + un);
-        theNewUserC.goToSearch(newUser);
+        if(!pw.equals(cpw))
+        {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Whoa");
+            alert.setHeaderText("Passwords don't match");
+            alert.setContentText("Please try again");
+            alert.showAndWait();
+        }
+        else
+        {
+            newUser = new User(un, pw, fn, ln);
+            System.out.println("NEW USER: " + un);
+            theNewUserC.goToSearch(newUser);
+        }
     }
     
+    //SETTER
     public void setNewUserC(NewUserC aNewUserC)
     {
         this.theNewUserC = aNewUserC;

@@ -13,6 +13,7 @@ public class ProfileC
     private LoginC theLoginC;
     private User currentUser;
     
+    //CONSTRUCTOR
     public ProfileC(Stage stage, User currentUser)
     {
         this.stage = stage;
@@ -20,6 +21,7 @@ public class ProfileC
         setProfileScene(this.stage);
     }
     
+    //SET SCENE
     public void setProfileScene(Stage stage)
     {
         try
@@ -38,11 +40,11 @@ public class ProfileC
         }
     }
     
+    //NAVIGATION
     public void goToSearch()
     {
         SearchC theSearchC = new SearchC (this.stage, currentUser);
     }
-    
     public void close()
     {
         stage.close();

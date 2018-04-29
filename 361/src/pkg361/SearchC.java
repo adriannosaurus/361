@@ -20,6 +20,7 @@ public class SearchC
     private ArrayList<Book> resultsList;
     private User currentUser;
     
+    //CONSTRUCTOR
     public SearchC(Stage stage, User currentUser)
     {
         this.stage = stage;
@@ -28,6 +29,7 @@ public class SearchC
         setSearchScene(stage);
     }
     
+    //SET SCENE
     public void setSearchScene(Stage stage)
     {
         try
@@ -46,6 +48,7 @@ public class SearchC
         }
     }
     
+    //FIGURE OUT HOW USER IS SEARCHING: BY TITLE OR BY ISBN
     public int getSearchType(String input)
     {
         String searchTerm = input;
@@ -67,6 +70,7 @@ public class SearchC
         }
     }
     
+    //SEARCH ALGORITHM FOR ISBN
     public Book searchByIsbn(String in)
     {      
         String searchISBN = "";
@@ -111,6 +115,7 @@ public class SearchC
         return toReturn;
     }
     
+    //SEARCH ALGORITHM FOR TITLE
     public Book searchByTitle(String in)
     {        
         String searchTerm = in.toLowerCase();
@@ -143,6 +148,7 @@ public class SearchC
         return toReturn;
     }
     
+    //GETTERS
     public ArrayList<Book> getResultsList()
     {
         return resultsList;
@@ -153,16 +159,15 @@ public class SearchC
         return currentUser;
     }
     
+    //NAVIGATION
     public void goToLogin()
     {
         theLoginC = new LoginC(this.stage);
     }
-    
     public void goToProfile()
     {
         theProfileC = new ProfileC(this.stage, currentUser);
     }
-    
     public void goToBookmarks()
     {
         ProfileC theProfileC = new ProfileC(this.stage, currentUser);

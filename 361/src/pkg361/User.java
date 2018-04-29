@@ -11,6 +11,7 @@ public class User implements Serializable
     private String lName;
     private ArrayList<Book> bookmarksList = new ArrayList();
     
+    //CONSTRUCTORS
     public User(String username, String password)
     {
         this.username = username;
@@ -26,16 +27,19 @@ public class User implements Serializable
         this.lName = lName;
     }
     
-    public void addBookmark(Book toAdd)
-    {
-        bookmarksList.add(toAdd);
-    }
-    
+    //AUTHENTICATION
     public boolean isEqual(String username, String password)
     {
         return (username.equals(this.username) && password.equals(this.password));
     }
     
+    //ADD BOOKMARK TO LIST
+    public void addBookmark(Book toAdd)
+    {
+        bookmarksList.add(toAdd);
+    }
+    
+    //GETTERS AND SETTERS
     public ArrayList<Book> getBookmarksList()
     {
         return bookmarksList;

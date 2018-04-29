@@ -17,6 +17,7 @@ public class LoginC
     private UserList listOfUsers;
     private User currentUser = null;
     
+    //CONSTRUCTOR
     public LoginC(Stage stage)
     {
         listOfUsers = new UserList();
@@ -25,6 +26,7 @@ public class LoginC
         setLoginScene(this.stage);
     }
     
+    //SET SCENE
     public void setLoginScene(Stage stage)
     {
         try
@@ -43,6 +45,7 @@ public class LoginC
         }
     }
     
+    //CHECK IF USER IS VALID
     public boolean authenticate(String un, String pw)
     {       
         if(listOfUsers.verifyLogin(un, pw))
@@ -60,6 +63,7 @@ public class LoginC
         return false;
     }
     
+    //GETTERS AND SETTERS
     public void setCurrentUser(String username)
     {
         ArrayList<User> userList = listOfUsers.populateListOfUsers();
@@ -72,27 +76,27 @@ public class LoginC
             }
         }
     }
-    
     public User getCurrentUser()
     {
         return currentUser;
     }
     
+    //REMOVE CURRENT USER
+    //kinda sorta unnecessary since I revamped the code but ¯\_(ツ)_/¯
     public void logoutUser()
     {
         currentUser = null;
     }
     
+    //NAVIGATION
     public void goToSearch()
     {
         SearchC theSearchC = new SearchC (this.stage, currentUser);
     }
-    
     public void goToNewUser()
     {
         NewUserC theNewUserC = new NewUserC(this.stage);
     }
-    
     public void close()
     {
         stage.close();

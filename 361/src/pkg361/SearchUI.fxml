@@ -50,7 +50,7 @@
          </font>
       </TextField>
       <Button fx:id="submitButton" layoutX="459.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleSubmitButton" text="Go" />
-      <TableView fx:id="resultsTable" layoutX="284.0" layoutY="141.0" prefHeight="206.0" prefWidth="260.0">
+      <TableView fx:id="resultsTable" layoutX="284.0" layoutY="141.0" prefHeight="206.0" prefWidth="260.0" visible="false">
         <columns>
           <TableColumn fx:id="vendorColumn" prefWidth="167.0" text="Vendor" />
           <TableColumn fx:id="priceColumn" prefWidth="92.0" text="Starting Price" />

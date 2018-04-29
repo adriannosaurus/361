@@ -21,16 +21,15 @@ public class LoginUIC implements Initializable
     private NewUserC theNewUserC;
     private NewUserUIC theNewUserUIC;
     
+    //BUTTON HANDLERS
     @FXML public void handleCancelButton (ActionEvent ae) throws Exception
     {
         theLoginC.close();
     }
-    
     @FXML public void handleNewUserButton(ActionEvent ae) throws Exception
     {
         theLoginC.goToNewUser();
     }
-    
     @FXML private void handleSubmitButton(ActionEvent event) throws Exception {
         
         System.out.println("Authenticating... ");
@@ -56,6 +55,7 @@ public class LoginUIC implements Initializable
         
     }
     
+    //SET SCENE
     public void setLoginC(LoginC aLoginC)
     {
         this.theLoginC = aLoginC;
