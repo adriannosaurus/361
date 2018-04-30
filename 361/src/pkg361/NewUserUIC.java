@@ -52,19 +52,32 @@ public class NewUserUIC implements Initializable
         fn = firstnameField.getText();
         ln = lastnameField.getText();
         
-        if(!pw.equals(cpw))
+        if ((!un.isEmpty()) && (!pw.isEmpty()))
         {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Whoa");
-            alert.setHeaderText("Passwords don't match");
-            alert.setContentText("Please try again");
-            alert.showAndWait();
+            if(!pw.equals(cpw))
+            {
+                passwordField.clear();
+                cPasswordField.clear();
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Whoa");
+                alert.setHeaderText("Passwords don't match");
+                alert.setContentText("Please try again");
+                alert.showAndWait();
+            }
+            else
+            {
+                newUser = new User(un, pw, fn, ln);
+                System.out.println("NEW USER: " + un);
+                theNewUserC.goToSearch(newUser);
+            }
         }
         else
         {
-            newUser = new User(un, pw, fn, ln);
-            System.out.println("NEW USER: " + un);
-            theNewUserC.goToSearch(newUser);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Wait a minute");
+            alert.setHeaderText("There's no data");
+            alert.setContentText("Please enter info");
+            alert.showAndWait();
         }
     }
     

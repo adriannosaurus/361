@@ -32,17 +32,17 @@
          </columns>
       </TableView>
       <Label fx:id="usernameLabel" layoutX="33.0" layoutY="151.0" text="Username" />
-      <TextField fx:id="usernameField" layoutX="33.0" layoutY="168.0" />
-      <Button fx:id="usernameButton" layoutX="209.0" layoutY="168.0" mnemonicParsing="false" onAction="#changeUsernameButton" prefHeight="27.0" prefWidth="69.0" text="Change" />
+      <TextField fx:id="usernameField" layoutX="33.0" layoutY="168.0" onAction="#changeUsernameButton" />
       <Label fx:id="passwordLabel" layoutX="33.0" layoutY="203.0" text="Password: (not shown for security)" />
-      <Button fx:id="passwordButton" layoutX="209.0" layoutY="220.0" mnemonicParsing="false" onAction="#changePasswordButton" prefHeight="27.0" prefWidth="69.0" text="Change" />
+      <PasswordField fx:id="passwordField" layoutX="33.0" layoutY="220.0" onAction="#changePasswordButton" />
       <Label fx:id="firstnameLabel" layoutX="33.0" layoutY="260.0" text="First name" />
-      <TextField fx:id="firstnameField" layoutX="33.0" layoutY="277.0" />
-      <Button fx:id="firstnameButton" layoutX="209.0" layoutY="277.0" mnemonicParsing="false" onAction="#changeFirstnameButton" prefHeight="27.0" prefWidth="69.0" text="Change" />
+      <TextField fx:id="firstnameField" layoutX="33.0" layoutY="277.0" onAction="#changeFirstnameButton" />
       <Label fx:id="lastnameLabel" layoutX="33.0" layoutY="312.0" text="Last name" />
-      <TextField fx:id="lastnameField" layoutX="33.0" layoutY="329.0" />
+      <TextField fx:id="lastnameField" layoutX="33.0" layoutY="329.0" onAction="#changeLastnameButton" />
+      <Button fx:id="usernameButton" layoutX="209.0" layoutY="168.0" mnemonicParsing="false" onAction="#changeUsernameButton" prefHeight="27.0" prefWidth="69.0" text="Change" />
+      <Button fx:id="passwordButton" layoutX="209.0" layoutY="220.0" mnemonicParsing="false" onAction="#changePasswordButton" prefHeight="27.0" prefWidth="69.0" text="Change" />
+      <Button fx:id="firstnameButton" layoutX="209.0" layoutY="277.0" mnemonicParsing="false" onAction="#changeFirstnameButton" prefHeight="27.0" prefWidth="69.0" text="Change" />
       <Button fx:id="latnameButton" layoutX="209.0" layoutY="329.0" mnemonicParsing="false" onAction="#changeLastnameButton" prefHeight="27.0" prefWidth="69.0" text="Change" />
-      <PasswordField fx:id="passwordField" layoutX="33.0" layoutY="220.0" />
       <Button fx:id="logoutButton" layoutX="489.0" layoutY="364.0" mnemonicParsing="false" onAction="#handleLogoutButton" text="Log out" />
    </children>
 </AnchorPane>

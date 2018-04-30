@@ -44,7 +44,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="userInputField" layoutX="237.0" layoutY="29.0" prefHeight="28.0" prefWidth="206.0" promptText="Enter title or ISBN">
+      <TextField fx:id="userInputField" layoutX="237.0" layoutY="29.0" onAction="#handleSubmitButton" prefHeight="28.0" prefWidth="206.0" promptText="Enter title or ISBN">
          <font>
             <Font size="14.0" />
          </font>
