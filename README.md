@@ -1,10 +1,8 @@
 #361
 
-This document is included in a zip folder with the source code for my IST 361 project.
+From January to April 2018, I had free reign to create a prototype of an application. I decided to design a prototype for a textbook price match application. The idea came to me at the beginning of the semester when I was trying to find the best places to order textbooks.
 
-For the past four months, I have had free reign to create a prototype of an application. I decided to design a prototype for a textbook price match application. The idea came to me at the beginning of the semester when I was trying to find the best places to order textbooks.
-
-Working on a full-scale project independently is a huge milestone for me. IST 361 gives me the freedom and flexibility to experience the entire development lifecycle from conception to working prototype, along with all of the challenges that I will face in the real world.
+Working on a full-scale project independently is a huge milestone for me. This project has given me the freedom and flexibility to experience the entire development lifecycle from conception to working prototype, along with all of the challenges that I will face in the real world.
 
 Below is a list of all of the classes in the project and a quick summary of what they do. All of the code was written by me. As I continue to build this project on my own time, though, I will likely integrate open source code to make the application more robust.
 
